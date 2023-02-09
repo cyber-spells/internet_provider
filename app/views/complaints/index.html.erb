@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center justify-content-center full_height">
+    <div class="transparent_block">
+        <div class="transparent_block__content transparent_block__container">
+            <div class="row w-100">
+                <%@complaints.each do |complaint|%>
+                    <%= render "complaint", complaint: complaint%>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="col-12 col-md-6 col-lg-4">
+    <%= link_to complaint_path(complaint.id), class: "card_complaint d-block" do%>
+        <h4 class="m-0 text-center">Скарга №<%=complaint.id%></h4>
+        <small class="d-block text-center mt-2">(статус <%=complaint.state%>)</small>
+    <%end%>
+</div>

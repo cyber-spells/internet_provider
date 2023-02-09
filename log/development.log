@@ -1,0 +1,433 @@
+Creating scope :open. Overwriting existing method Complaint.open.
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "internet_provider_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "internet_provider_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "complaints" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "complaints" ("id" bigserial primary key, "employee_id" integer, "consumer_id" integer, "text" text, "user_name" character varying, "phone" character varying, "address" character varying, "state" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "consumers" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "consumers" ("id" bigserial primary key, "address" character varying, "phone" character varying, "user_name" character varying, "tariff_id" integer NOT NULL, "balance" integer DEFAULT 0 NOT NULL, "tariff_expiration_at" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "employees" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "role" integer DEFAULT 0 NOT NULL, "phone" character varying, "name" character varying DEFAULT '', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_reset_password_token" ON "employees" ("reset_password_token")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "solveds" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "solveds" ("id" bigserial primary key, "text" text NOT NULL, "complaint_id" integer NOT NULL, "employee_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tariffs" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "tariffs" ("id" bigserial primary key, "name" character varying, "speed" integer DEFAULT 0 NOT NULL, "price" integer DEFAULT 0 NOT NULL, "expiration_days" integer DEFAULT 28 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "complaints" CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "complaints" ("id" bigserial primary key, "employee_id" integer, "consumer_id" integer, "text" text, "user_name" character varying, "phone" character varying, "address" character varying, "state" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "consumers" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "consumers" ("id" bigserial primary key, "address" character varying, "phone" character varying, "user_name" character varying, "tariff_id" integer NOT NULL, "balance" integer DEFAULT 0 NOT NULL, "tariff_expiration_at" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "employees" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "role" integer DEFAULT 0 NOT NULL, "phone" character varying, "name" character varying DEFAULT '', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_reset_password_token" ON "employees" ("reset_password_token")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "solveds" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "solveds" ("id" bigserial primary key, "text" text NOT NULL, "complaint_id" integer NOT NULL, "employee_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "tariffs" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "tariffs" ("id" bigserial primary key, "name" character varying, "speed" integer DEFAULT 0 NOT NULL, "price" integer DEFAULT 0 NOT NULL, "expiration_days" integer DEFAULT 28 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2023-02-09 11:19:34.412854"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-02-09 11:19:34.422058"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "role", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$12$2pio2DuihnTHaDt6SX89suYS8U0cYL8hBory.u1BFaUWBDGxL6462"], ["role", 2], ["name", "Admin"], ["created_at", "2023-02-09 11:19:34.672767"], ["updated_at", "2023-02-09 11:19:34.672767"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "system_admin@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "role", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "system_admin@example.com"], ["encrypted_password", "$2a$12$20Sgz2tJcbYm5dbtyJulbOKKy9uqB.62BHIY41eCz2XUQop3l9Rv6"], ["role", 1], ["name", "SystemAdmin"], ["created_at", "2023-02-09 11:19:34.845588"], ["updated_at", "2023-02-09 11:19:34.845588"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "guest@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "guest@example.com"], ["encrypted_password", "$2a$12$X6LeCq3g0ETT5GR2UMnWe.I/YAYyaj.KE3WdyEZzDRpSddwSD.0nu"], ["name", "Guest"], ["created_at", "2023-02-09 11:19:35.020993"], ["updated_at", "2023-02-09 11:19:35.020993"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.3ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "200Mb"], ["speed", 200], ["price", 350], ["created_at", "2023-02-09 11:19:35.028384"], ["updated_at", "2023-02-09 11:19:35.028384"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.2ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "100Mb"], ["speed", 100], ["price", 230], ["created_at", "2023-02-09 11:19:35.031923"], ["updated_at", "2023-02-09 11:19:35.031923"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.2ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "50Mb"], ["speed", 50], ["price", 180], ["created_at", "2023-02-09 11:19:35.035144"], ["updated_at", "2023-02-09 11:19:35.035144"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.3ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 566], ["tariff_expiration_at", "2023-02-16"], ["created_at", "2023-02-09 11:19:35.047014"], ["updated_at", "2023-02-09 11:19:35.047014"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.2ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 129], ["tariff_expiration_at", "2023-02-04"], ["created_at", "2023-02-09 11:19:35.051136"], ["updated_at", "2023-02-09 11:19:35.051136"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.1ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 465], ["tariff_expiration_at", "2023-02-03"], ["created_at", "2023-02-09 11:19:35.054738"], ["updated_at", "2023-02-09 11:19:35.054738"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.1ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 990], ["tariff_expiration_at", "2023-02-09"], ["created_at", "2023-02-09 11:19:35.057993"], ["updated_at", "2023-02-09 11:19:35.057993"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.1ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 982], ["tariff_expiration_at", "2023-02-10"], ["created_at", "2023-02-09 11:19:35.061382"], ["updated_at", "2023-02-09 11:19:35.061382"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.2ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 797], ["tariff_expiration_at", "2023-02-05"], ["created_at", "2023-02-09 11:19:35.064792"], ["updated_at", "2023-02-09 11:19:35.064792"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.2ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 517], ["tariff_expiration_at", "2023-02-04"], ["created_at", "2023-02-09 11:19:35.068336"], ["updated_at", "2023-02-09 11:19:35.068336"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.2ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 579], ["tariff_expiration_at", "2023-02-18"], ["created_at", "2023-02-09 11:19:35.071867"], ["updated_at", "2023-02-09 11:19:35.071867"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.1ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 654], ["tariff_expiration_at", "2023-02-16"], ["created_at", "2023-02-09 11:19:35.075315"], ["updated_at", "2023-02-09 11:19:35.075315"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.2ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 104], ["tariff_expiration_at", "2023-02-01"], ["created_at", "2023-02-09 11:19:35.078847"], ["updated_at", "2023-02-09 11:19:35.078847"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for ::1 at 2023-02-09 13:19:41 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 741)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.5
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 742.9ms | Allocations: 5037)
+Completed 500 Internal Server Error in 757ms (ActiveRecord: 0.0ms | Allocations: 9829)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/julian/internet_provider/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for ::1 at 2023-02-09 13:20:00 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 636)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/julian/internet_provider/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+
+[Webpacker] Hash: 26555a984c78413699c7
+Version: webpack 4.46.0
+Time: 6329ms
+Built at: 02/09/2023 1:20:07 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-8177b925c6b6446a97dc.js   1.18 MiB  application  [emitted] [immutable]  application
+js/application-8177b925c6b6446a97dc.js.map    1.2 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-8177b925c6b6446a97dc.js js/application-8177b925c6b6446a97dc.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 549 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 747 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 64 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 7507.9ms | Allocations: 4326)
+Completed 200 OK in 7516ms (Views: 7509.9ms | ActiveRecord: 0.0ms | Allocations: 8162)
+
+
+Started GET "/complaints" for ::1 at 2023-02-09 13:20:17 +0200
+Processing by ComplaintsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/index.html.erb within layouts/application
+  [1m[36mComplaint Load (2.3ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints"[0m
+  ↳ app/views/complaints/index.html.erb:5
+  Rendered complaints/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3536)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 2.3ms | Allocations: 5294)
+
+
+Started GET "/" for ::1 at 2023-02-09 13:20:18 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1875)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2390)
+
+
+Started GET "/complaints/new" for ::1 at 2023-02-09 13:20:19 +0200
+Processing by ComplaintsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/new.html.erb within layouts/application
+  Rendered complaints/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 4771)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 5401)
+
+
+Started GET "/admin" for ::1 at 2023-02-09 13:20:25 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 553)
+
+
+Started GET "/admin/login" for ::1 at 2023-02-09 13:20:25 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.8ms | Allocations: 708)
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 10.4ms | Allocations: 11847)
+  Rendered layout /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 2190.0ms | Allocations: 543174)
+Completed 200 OK in 2205ms (Views: 2191.7ms | ActiveRecord: 4.3ms | Allocations: 551314)
+
+
+Started GET "/admin/login" for ::1 at 2023-02-09 13:20:27 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 4.7ms | Allocations: 6097)
+  Rendered layout /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 99.3ms | Allocations: 49630)
+Completed 200 OK in 101ms (Views: 99.8ms | ActiveRecord: 0.0ms | Allocations: 50372)
+
+
+Started POST "/admin/login" for ::1 at 2023-02-09 13:20:29 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 205ms (ActiveRecord: 1.4ms | Allocations: 7503)
+
+
+Started GET "/admin" for ::1 at 2023-02-09 13:20:29 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 23.3ms | Allocations: 28272)
+Completed 200 OK in 29ms (Views: 21.6ms | ActiveRecord: 3.4ms | Allocations: 32182)
+
+
+Started GET "/admin/consumers" for ::1 at 2023-02-09 13:20:32 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (0.6ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (0.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (0.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 94.5ms | Allocations: 99099)
+Completed 200 OK in 109ms (Views: 89.7ms | ActiveRecord: 9.6ms | Allocations: 107658)
+
+
+Started GET "/admin/employees" for ::1 at 2023-02-09 13:20:34 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 45.1ms | Allocations: 47011)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 1.6ms | Allocations: 50700)
+
+
+Started GET "/admin/tariffs" for ::1 at 2023-02-09 13:20:36 +0200
+Processing by Admin::TariffsController#index as HTML
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mTariff Load (1.0ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" ORDER BY "tariffs"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.7ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 53.7ms | Allocations: 53259)
+Completed 200 OK in 65ms (Views: 54.8ms | ActiveRecord: 2.8ms | Allocations: 56846)
+
+
+Started GET "/admin/complaints" for ::1 at 2023-02-09 13:20:38 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (0.8ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" WHERE (TRUE=TRUE) ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.8ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (0.7ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 81.8ms | Allocations: 70014)
+Completed 200 OK in 96ms (Views: 73.4ms | ActiveRecord: 15.4ms | Allocations: 73848)
+
+
+Started GET "/admin/dashboard" for ::1 at 2023-02-09 13:20:39 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 33.9ms | Allocations: 25379)
+Completed 200 OK in 40ms (Views: 33.3ms | ActiveRecord: 2.2ms | Allocations: 27524)
+
+
+Started GET "/admin/complaints" for ::1 at 2023-02-09 13:20:40 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (0.6ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" WHERE (TRUE=TRUE) ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.9ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (0.9ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 73.7ms | Allocations: 65126)
+Completed 200 OK in 82ms (Views: 66.3ms | ActiveRecord: 9.3ms | Allocations: 67721)
+
+
+Started GET "/admin/consumers" for ::1 at 2023-02-09 13:20:41 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (0.6ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (0.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (0.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 59.3ms | Allocations: 78609)
+Completed 200 OK in 64ms (Views: 56.1ms | ActiveRecord: 4.4ms | Allocations: 81166)
+
+
+Started GET "/admin/employees" for ::1 at 2023-02-09 13:20:41 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 52.5ms | Allocations: 45185)
+Completed 200 OK in 60ms (Views: 52.3ms | ActiveRecord: 2.3ms | Allocations: 47675)
+
+
+Started GET "/admin/tariffs" for ::1 at 2023-02-09 13:20:42 +0200
+Processing by Admin::TariffsController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mTariff Load (1.0ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" ORDER BY "tariffs"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.8ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 47.6ms | Allocations: 50650)
+Completed 200 OK in 54ms (Views: 46.3ms | ActiveRecord: 2.6ms | Allocations: 53138)
+
+
+Started GET "/admin/dashboard" for ::1 at 2023-02-09 13:20:43 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 35.3ms | Allocations: 25358)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 2.1ms | Allocations: 27402)
+
+
+Started GET "/admin/complaints" for ::1 at 2023-02-09 13:20:44 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (0.7ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" WHERE (TRUE=TRUE) ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.7ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (0.6ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 54.3ms | Allocations: 65175)
+Completed 200 OK in 58ms (Views: 47.2ms | ActiveRecord: 7.9ms | Allocations: 67723)
+
+
+Started GET "/admin/consumers" for ::1 at 2023-02-09 13:20:45 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (0.8ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (0.9ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (0.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 79.4ms | Allocations: 78495)
+Completed 200 OK in 88ms (Views: 75.7ms | ActiveRecord: 6.0ms | Allocations: 81043)
+
+
+Started GET "/admin/dashboard" for ::1 at 2023-02-09 13:21:17 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/julian/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 24.9ms | Allocations: 25362)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 1.7ms | Allocations: 27405)
+
+

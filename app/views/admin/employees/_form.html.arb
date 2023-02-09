@@ -1,0 +1,11 @@
+active_admin_form_for [:admin, resource] do |f|
+  f.inputs do
+    f.input :role, include_blank: false if current_employee.admin?
+    f.input :name
+    f.input :phone
+    f.input :email
+    f.input :password if f.object.new_record?
+    f.input :password_confirmation if f.object.new_record?
+  end
+  f.actions
+end
