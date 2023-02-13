@@ -42,13 +42,13 @@ Tariff.create([
                   expiration_days: 28
                 }
               ])
-10.times do
-  Consumer.create([
-                    {
-                      phone: "SOME PHONE",
-                      tariff: Tariff.all.sample,
-                      balance: rand(0..1000),
-                      tariff_expiration_at: Date.today + rand(-10..10)
-                    }
-                  ])
-end
+# 10.times do
+#   Consumer.create([
+#                     {
+#                       phone: "SOME PHONE",
+#                       tariff: Tariff.all.sample,
+#                       balance: rand(0..1000),
+#                       tariff_expiration_at: Date.today + rand(-10..10)
+#                     }
+#                   ])
+# end
