@@ -1383,3 +1383,192 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 21ms (Views: 11.1ms | ActiveRecord: 3.1ms | Allocations: 14985)
 
 
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:53:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 573)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 5312)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 8133)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 573)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5313)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 8150)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:34 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 573)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5313)
+Completed 200 OK in 8ms (Views: 7.7ms | Allocations: 8150)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 174)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3706)
+Completed 200 OK in 11ms (Views: 10.4ms | Allocations: 4535)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 174)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3707)
+Completed 200 OK in 5ms (Views: 3.9ms | Allocations: 4460)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 573)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5318)
+Completed 200 OK in 8ms (Views: 7.7ms | Allocations: 8062)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 174)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3706)
+Completed 200 OK in 4ms (Views: 3.5ms | Allocations: 4543)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:51 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 573)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 5317)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 8061)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:54:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 174)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3706)
+Completed 200 OK in 6ms (Views: 4.3ms | Allocations: 4534)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:55:37 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.6ms | Allocations: 720)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 4566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 7466)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 2.1ms | Allocations: 17191)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:55:40 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.5ms | Allocations: 570)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2364)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5056)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 7596)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:55:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.5ms | Allocations: 570)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2363)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5055)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 7574)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 22:01:37 +0200
+Creating scope :open. Overwriting existing method Complaint.open.
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 204)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4107)
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 3.9ms | Allocations: 13059)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2023-02-13 22:03:05 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (3.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 1439.3ms | Allocations: 473083)
+Completed 200 OK in 1459ms (Views: 1436.7ms | ActiveRecord: 10.5ms | Allocations: 487278)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-13 22:03:08 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-13' and tariff_expiration_at <= '2023-02-18')[0m
+  [1m[36mConsumer Load (0.5ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (0.7ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 112.0ms | Allocations: 98146)
+Completed 200 OK in 121ms (Views: 105.2ms | ActiveRecord: 10.3ms | Allocations: 103930)
+
+
+Started GET "/admin/consumers/10/edit" for 127.0.0.1 at 2023-02-13 22:03:19 +0200
+Processing by Admin::ConsumersController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConsumer Load (0.3ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE "consumers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Consumer Load (0.0ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE "consumers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTariff Load (0.7ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTariff Load (0.5ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/edit.html.arb (Duration: 34.0ms | Allocations: 50543)
+Completed 200 OK in 40ms (Views: 33.8ms | ActiveRecord: 2.2ms | Allocations: 54932)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
