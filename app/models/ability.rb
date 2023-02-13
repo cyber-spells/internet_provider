@@ -1,24 +1,24 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(employee)
     can :read, ActiveAdmin::Page, name: "Dashboard", namespace_name: "admin"
     can :read, Consumer
     can :read, Complaint
     can :read, Solved
 
-    if user.system_admin?
+    if employee.system_admin?
       can :read, Employee
-      can :manage, Employee, id: user.id
+      can :manage, Employee, id: employee.id
       can :read, Tariff
     end
 
-    if user.admin?
+    if employee.admin?
       can :manage, Employee
       can :manage, Tariff
     end
 
-    if user.admin? || user.system_admin?
+    if employee.admin? || employee.system_admin?
       can :manage, Complaint
       can :manage, Consumer
       can :manage, Solved

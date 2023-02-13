@@ -431,3 +431,955 @@ Processing by Admin::DashboardController#index as HTML
 Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 1.7ms | Allocations: 27405)
 
 
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for 127.0.0.1 at 2023-02-09 22:26:12 +0200
+  
+ActiveRecord::NoDatabaseError (connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "internet_provider_development" does not exist
+):
+  
+activerecord (6.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (6.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.6) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.6) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.6) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.6) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.6) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.6) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.6) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Creating scope :open. Overwriting existing method Complaint.open.
+  [1m[35m (246.5ms)[0m  [1m[35mCREATE DATABASE "internet_provider_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.6ms)[0m  [1m[35mCREATE DATABASE "internet_provider_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "complaints" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "complaints" ("id" bigserial primary key, "employee_id" integer, "consumer_id" integer, "text" text, "user_name" character varying, "phone" character varying, "address" character varying, "state" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "consumers" CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "consumers" ("id" bigserial primary key, "address" character varying, "phone" character varying, "user_name" character varying, "tariff_id" integer NOT NULL, "balance" integer DEFAULT 0 NOT NULL, "tariff_expiration_at" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "employees" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "role" integer DEFAULT 0 NOT NULL, "phone" character varying, "name" character varying DEFAULT '', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_reset_password_token" ON "employees" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "solveds" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "solveds" ("id" bigserial primary key, "text" text NOT NULL, "complaint_id" integer NOT NULL, "employee_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tariffs" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "tariffs" ("id" bigserial primary key, "name" character varying, "speed" integer DEFAULT 0 NOT NULL, "price" integer DEFAULT 0 NOT NULL, "expiration_days" integer DEFAULT 28 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220521151504)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220521131310),
+(20220521131357),
+(20220521134533),
+(20220521140102),
+(20220521142757);
+
+[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-09 20:26:22.730017"], ["updated_at", "2023-02-09 20:26:22.730017"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "65c2ebc30c3821366822bdae5e8e60695711ffc8"], ["created_at", "2023-02-09 20:26:22.738669"], ["updated_at", "2023-02-09 20:26:22.738669"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "complaints" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "complaints" ("id" bigserial primary key, "employee_id" integer, "consumer_id" integer, "text" text, "user_name" character varying, "phone" character varying, "address" character varying, "state" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "consumers" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "consumers" ("id" bigserial primary key, "address" character varying, "phone" character varying, "user_name" character varying, "tariff_id" integer NOT NULL, "balance" integer DEFAULT 0 NOT NULL, "tariff_expiration_at" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "employees" CASCADE[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "role" integer DEFAULT 0 NOT NULL, "phone" character varying, "name" character varying DEFAULT '', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_email" ON "employees" ("email")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_employees_on_reset_password_token" ON "employees" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "solveds" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "solveds" ("id" bigserial primary key, "text" text NOT NULL, "complaint_id" integer NOT NULL, "employee_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tariffs" CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "tariffs" ("id" bigserial primary key, "name" character varying, "speed" integer DEFAULT 0 NOT NULL, "price" integer DEFAULT 0 NOT NULL, "expiration_days" integer DEFAULT 28 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220521151504)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220521131310),
+(20220521131357),
+(20220521134533),
+(20220521140102),
+(20220521142757);
+
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-09 20:26:22.897713"], ["updated_at", "2023-02-09 20:26:22.897713"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-02-09 20:26:22.903915"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "65c2ebc30c3821366822bdae5e8e60695711ffc8"], ["created_at", "2023-02-09 20:26:22.909045"], ["updated_at", "2023-02-09 20:26:22.909045"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.8ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "role", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$12$S5xZUb38AAhM/vn85VZ8xuCZutuAnKHUn1FI7TpdGYzZpfZ815JDm"], ["role", 2], ["name", "Admin"], ["created_at", "2023-02-09 20:26:23.202152"], ["updated_at", "2023-02-09 20:26:23.202152"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "system_admin@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "role", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "system_admin@example.com"], ["encrypted_password", "$2a$12$COhtuEsmm5RJ3z.olel/SOtBqlN/Atia1W9Zw1f.E4lWFKpXpm01C"], ["role", 1], ["name", "SystemAdmin"], ["created_at", "2023-02-09 20:26:23.449962"], ["updated_at", "2023-02-09 20:26:23.449962"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = $1 LIMIT $2[0m  [["email", "guest@example.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "guest@example.com"], ["encrypted_password", "$2a$12$uDt1kTY/dD39O7a9p5p.WuZeBYUW4cxtx.S8LXri9ReR17yZKHAzO"], ["name", "Guest"], ["created_at", "2023-02-09 20:26:23.709975"], ["updated_at", "2023-02-09 20:26:23.709975"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.6ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "200Mb"], ["speed", 200], ["price", 350], ["created_at", "2023-02-09 20:26:23.719612"], ["updated_at", "2023-02-09 20:26:23.719612"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.3ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "100Mb"], ["speed", 100], ["price", 230], ["created_at", "2023-02-09 20:26:23.725529"], ["updated_at", "2023-02-09 20:26:23.725529"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTariff Create (0.3ms)[0m  [1m[32mINSERT INTO "tariffs" ("name", "speed", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "50Mb"], ["speed", 50], ["price", 180], ["created_at", "2023-02-09 20:26:23.729247"], ["updated_at", "2023-02-09 20:26:23.729247"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.9ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 155], ["tariff_expiration_at", "2023-02-04"], ["created_at", "2023-02-09 20:26:23.743747"], ["updated_at", "2023-02-09 20:26:23.743747"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.3ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 123], ["tariff_expiration_at", "2023-02-12"], ["created_at", "2023-02-09 20:26:23.749860"], ["updated_at", "2023-02-09 20:26:23.749860"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.1ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 350], ["tariff_expiration_at", "2023-02-10"], ["created_at", "2023-02-09 20:26:23.756083"], ["updated_at", "2023-02-09 20:26:23.756083"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.4ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 443], ["tariff_expiration_at", "2023-02-03"], ["created_at", "2023-02-09 20:26:23.760437"], ["updated_at", "2023-02-09 20:26:23.760437"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.3ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 904], ["tariff_expiration_at", "2023-02-11"], ["created_at", "2023-02-09 20:26:23.765386"], ["updated_at", "2023-02-09 20:26:23.765386"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.3ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 1], ["balance", 45], ["tariff_expiration_at", "2023-01-30"], ["created_at", "2023-02-09 20:26:23.770875"], ["updated_at", "2023-02-09 20:26:23.770875"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.3ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 914], ["tariff_expiration_at", "2023-02-02"], ["created_at", "2023-02-09 20:26:23.776987"], ["updated_at", "2023-02-09 20:26:23.776987"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.4ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 1000], ["tariff_expiration_at", "2023-02-07"], ["created_at", "2023-02-09 20:26:23.781843"], ["updated_at", "2023-02-09 20:26:23.781843"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.4ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 3], ["balance", 871], ["tariff_expiration_at", "2023-01-30"], ["created_at", "2023-02-09 20:26:23.787320"], ["updated_at", "2023-02-09 20:26:23.787320"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTariff Load (0.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConsumer Create (0.4ms)[0m  [1m[32mINSERT INTO "consumers" ("phone", "tariff_id", "balance", "tariff_expiration_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["phone", "SOME PHONE"], ["tariff_id", 2], ["balance", 331], ["tariff_expiration_at", "2023-02-03"], ["created_at", "2023-02-09 20:26:23.792612"], ["updated_at", "2023-02-09 20:26:23.792612"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2023-02-09 22:26:25 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3279)
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 6668)
+
+
+Started GET "/complaints/new" for 127.0.0.1 at 2023-02-09 22:26:53 +0200
+Processing by ComplaintsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/new.html.erb within layouts/application
+  Rendered complaints/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4659)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 6182)
+
+
+Started POST "/complaints" for 127.0.0.1 at 2023-02-09 22:27:45 +0200
+Processing by ComplaintsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "complaint"=>{"consumer"=>"123", "user_name"=>"Юришинець Микола Миколайович", "phone"=>"+380965943889", "address"=>"вул. Лесі Українки, 51 с. Ганичі", "text"=>"Не працює інтернет"}, "commit"=>"Повідомити"}
+  [1m[36mConsumer Load (0.9ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE "consumers"."id" = $1 LIMIT $2[0m  [["id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/complaints_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.9ms | Allocations: 6668)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/complaints_controller.rb:5:in `create'
+Started GET "/complaints/new" for 127.0.0.1 at 2023-02-09 22:27:54 +0200
+Processing by ComplaintsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/new.html.erb within layouts/application
+  Rendered complaints/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3257)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3794)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-09 22:27:55 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2424)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 2885)
+
+
+Started GET "/complaints" for 127.0.0.1 at 2023-02-09 22:27:57 +0200
+Processing by ComplaintsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/index.html.erb within layouts/application
+  [1m[36mComplaint Load (1.5ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints"[0m
+  ↳ app/views/complaints/index.html.erb:5
+  Rendered complaints/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3509)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 1.5ms | Allocations: 4190)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:28:00 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 503)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 22:28:00 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.8ms | Allocations: 705)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 13.1ms | Allocations: 11820)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 1249.6ms | Allocations: 269569)
+Completed 200 OK in 1265ms (Views: 1251.1ms | ActiveRecord: 3.5ms | Allocations: 277464)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 22:28:06 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (2.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.1ms)[0m  [1m[33mUPDATE "employees" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["remember_created_at", "2023-02-09 20:28:06.493941"], ["updated_at", "2023-02-09 20:28:06.494556"], ["id", 1]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 336ms (ActiveRecord: 7.9ms | Allocations: 11713)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:28:06 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 26.6ms | Allocations: 28678)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 2.7ms | Allocations: 32480)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:28:10 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.3ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.4ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 171.3ms | Allocations: 99450)
+Completed 200 OK in 191ms (Views: 161.1ms | ActiveRecord: 18.3ms | Allocations: 104602)
+
+
+Started GET "/admin/consumers/10" for 127.0.0.1 at 2023-02-09 22:28:16 +0200
+Processing by Admin::ConsumersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConsumer Load (0.5ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE "consumers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[36mTariff Load (0.9ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 59.2ms | Allocations: 37266)
+Completed 200 OK in 67ms (Views: 59.7ms | ActiveRecord: 2.4ms | Allocations: 41572)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:28:18 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (3.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (2.0ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.6ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 128.2ms | Allocations: 79834)
+Completed 200 OK in 148ms (Views: 120.6ms | ActiveRecord: 11.8ms | Allocations: 82585)
+
+
+Started GET "/admin/employees" for 127.0.0.1 at 2023-02-09 22:28:21 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 40.9ms | Allocations: 47404)
+Completed 200 OK in 48ms (Views: 41.6ms | ActiveRecord: 1.7ms | Allocations: 50798)
+
+
+Started GET "/admin/complaints" for 127.0.0.1 at 2023-02-09 22:28:22 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE (TRUE=TRUE) AND "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (0.7ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" WHERE (TRUE=TRUE) ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (0.9ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (1.8ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 78.4ms | Allocations: 71044)
+Completed 200 OK in 89ms (Views: 63.2ms | ActiveRecord: 20.6ms | Allocations: 74900)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:28:24 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (TRUE=TRUE) AND (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.4ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE (TRUE=TRUE) ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.6ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.6ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 95.4ms | Allocations: 79560)
+Completed 200 OK in 103ms (Views: 88.9ms | ActiveRecord: 8.0ms | Allocations: 82248)
+
+
+Started GET "/admin/employees" for 127.0.0.1 at 2023-02-09 22:28:25 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 42.9ms | Allocations: 46096)
+Completed 200 OK in 50ms (Views: 42.2ms | ActiveRecord: 2.4ms | Allocations: 48586)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2023-02-09 22:28:39 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.3ms)[0m  [1m[33mUPDATE "employees" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2023-02-09 20:28:39.275326"], ["id", 1]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 23ms (ActiveRecord: 12.7ms | Allocations: 5718)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:28:39 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 290)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 22:28:39 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 5.7ms | Allocations: 6070)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 29.1ms | Allocations: 27147)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 27777)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 22:28:42 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"guest@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"guest@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 6.5ms | Allocations: 6620)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 27.2ms | Allocations: 27376)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.0ms | Allocations: 27923)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 22:30:17 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 5.3ms | Allocations: 6005)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 23.4ms | Allocations: 27047)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 27660)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 22:30:34 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"guest@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "guest@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 307ms (ActiveRecord: 1.2ms | Allocations: 2689)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:30:34 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 22.8ms | Allocations: 24973)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 2.2ms | Allocations: 26968)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-02-09 22:30:43 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 23.0ms | Allocations: 25530)
+Completed 200 OK in 31ms (Views: 22.0ms | ActiveRecord: 2.2ms | Allocations: 27516)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:30:44 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.4ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.5ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.5ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 64.3ms | Allocations: 69177)
+Completed 200 OK in 70ms (Views: 57.9ms | ActiveRecord: 7.9ms | Allocations: 71582)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:30:45 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.2ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.4ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 72.8ms | Allocations: 69438)
+Completed 200 OK in 79ms (Views: 66.8ms | ActiveRecord: 7.3ms | Allocations: 71841)
+
+
+Started GET "/admin/consumers/1" for 127.0.0.1 at 2023-02-09 22:32:52 +0200
+Processing by Admin::ConsumersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mConsumer Load (0.9ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" WHERE "consumers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[36mTariff Load (1.8ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 31.2ms | Allocations: 30008)
+Completed 200 OK in 39ms (Views: 30.1ms | ActiveRecord: 3.5ms | Allocations: 33086)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:32:54 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.0ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.3ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.4ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 76.2ms | Allocations: 69025)
+Completed 200 OK in 82ms (Views: 70.0ms | ActiveRecord: 8.0ms | Allocations: 71427)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-02-09 22:32:55 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 20.7ms | Allocations: 25224)
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 2.1ms | Allocations: 27211)
+
+
+Started GET "/admin/complaints" for 127.0.0.1 at 2023-02-09 22:32:56 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints"[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (1.0ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (1.6ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (1.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 74.1ms | Allocations: 63970)
+Completed 200 OK in 81ms (Views: 62.3ms | ActiveRecord: 13.3ms | Allocations: 66384)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-02-09 22:32:58 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 27.8ms | Allocations: 25521)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 2.3ms | Allocations: 27508)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-09 22:33:02 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2451)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2913)
+
+
+Started GET "/complaints" for 127.0.0.1 at 2023-02-09 22:42:25 +0200
+Processing by ComplaintsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering complaints/index.html.erb within layouts/application
+  [1m[36mComplaint Load (1.0ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints"[0m
+  ↳ app/views/complaints/index.html.erb:5
+  Rendered complaints/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 5390)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 7736)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 10.6ms | Allocations: 8212)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-09 22:42:26 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2424)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 2888)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:43:27 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 26.1ms | Allocations: 25599)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 4.6ms | Allocations: 27790)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:44:51 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 29.0ms | Allocations: 24884)
+Completed 200 OK in 35ms (Views: 28.2ms | ActiveRecord: 2.8ms | Allocations: 26870)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:47:51 +0200
+Creating scope :open. Overwriting existing method Complaint.open.
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 32.8ms | Allocations: 27336)
+Completed 200 OK in 53ms (Views: 29.7ms | ActiveRecord: 9.6ms | Allocations: 37102)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-02-09 22:47:52 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 33.0ms | Allocations: 25067)
+Completed 200 OK in 39ms (Views: 24.1ms | ActiveRecord: 11.0ms | Allocations: 27206)
+
+
+Started GET "/admin/complaints" for 127.0.0.1 at 2023-02-09 22:47:53 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (1.0ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (2.2ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (1.2ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 107.4ms | Allocations: 74085)
+Completed 200 OK in 116ms (Views: 81.2ms | ActiveRecord: 30.6ms | Allocations: 77136)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:47:54 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (0.8ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.4ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.5ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 82.3ms | Allocations: 75752)
+Completed 200 OK in 90ms (Views: 73.6ms | ActiveRecord: 11.6ms | Allocations: 78715)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-02-09 22:52:40 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 29.3ms | Allocations: 25553)
+Completed 200 OK in 34ms (Views: 27.2ms | ActiveRecord: 3.3ms | Allocations: 27644)
+
+
+Started GET "/admin/complaints" for 127.0.0.1 at 2023-02-09 22:56:31 +0200
+Processing by Admin::ComplaintsController#index as HTML
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 0]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 2]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 3]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "complaints" WHERE "complaints"."state" = $1[0m  [["state", 4]]
+  [1m[36mComplaint Load (1.3ms)[0m  [1m[34mSELECT "complaints".* FROM "complaints" ORDER BY "complaints"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (1.5ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mSolved Load (1.1ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  [1m[36mCACHE Solved Load (0.0ms)[0m  [1m[34mSELECT "solveds".* FROM "solveds"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 135.8ms | Allocations: 64288)
+Completed 200 OK in 143ms (Views: 122.7ms | ActiveRecord: 14.7ms | Allocations: 66738)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:56:32 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.8ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.4ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.1ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 66.0ms | Allocations: 69439)
+Completed 200 OK in 73ms (Views: 58.9ms | ActiveRecord: 8.7ms | Allocations: 71853)
+
+
+Started GET "/admin/consumers" for 127.0.0.1 at 2023-02-09 22:59:16 +0200
+Processing by Admin::ConsumersController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "consumers" WHERE (tariff_expiration_at > '2023-02-09' and tariff_expiration_at <= '2023-02-14')[0m
+  [1m[36mConsumer Load (1.0ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers" ORDER BY "consumers"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTariff Load (1.7ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" WHERE "tariffs"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  [1m[36mTariff Load (1.0ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 80.7ms | Allocations: 69318)
+Completed 200 OK in 88ms (Views: 75.5ms | ActiveRecord: 6.7ms | Allocations: 71721)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2023-02-09 22:59:18 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms | Allocations: 2263)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:59:18 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 22:59:18 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 136)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 5.9ms | Allocations: 6102)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 30.0ms | Allocations: 27182)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 27837)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 22:59:24 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 285ms (ActiveRecord: 0.9ms | Allocations: 2753)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:59:25 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 19.6ms | Allocations: 25889)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 1.6ms | Allocations: 27941)
+
+
+Started GET "/admin/tariffs" for 127.0.0.1 at 2023-02-09 22:59:27 +0200
+Processing by Admin::TariffsController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mTariff Load (1.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" ORDER BY "tariffs"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (1.1ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 51.9ms | Allocations: 53944)
+Completed 200 OK in 62ms (Views: 51.7ms | ActiveRecord: 3.1ms | Allocations: 57343)
+
+
+Started GET "/admin/employees/1" for 127.0.0.1 at 2023-02-09 22:59:30 +0200
+Processing by Admin::EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 28.7ms | Allocations: 30578)
+Completed 200 OK in 39ms (Views: 30.7ms | ActiveRecord: 1.8ms | Allocations: 34737)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2023-02-09 22:59:32 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms | Allocations: 2272)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 22:59:32 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 22:59:32 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 6.5ms | Allocations: 6104)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 46.6ms | Allocations: 27184)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms | Allocations: 27833)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 23:00:05 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"system_admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "system_admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 349ms (ActiveRecord: 1.8ms | Allocations: 2707)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 23:00:05 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 27.3ms | Allocations: 26337)
+Completed 200 OK in 33ms (Views: 26.7ms | ActiveRecord: 1.9ms | Allocations: 28433)
+
+
+Started GET "/admin/tariffs" for 127.0.0.1 at 2023-02-09 23:00:18 +0200
+Processing by Admin::TariffsController#index as HTML
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mTariff Load (2.2ms)[0m  [1m[34mSELECT "tariffs".* FROM "tariffs" ORDER BY "tariffs"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mConsumer Load (1.4ms)[0m  [1m[34mSELECT "consumers".* FROM "consumers"[0m
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 61.1ms | Allocations: 48513)
+Completed 200 OK in 69ms (Views: 58.0ms | ActiveRecord: 4.9ms | Allocations: 51090)
+
+
+Started GET "/admin/employees" for 127.0.0.1 at 2023-02-09 23:00:20 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE (TRUE=TRUE) ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 40.5ms | Allocations: 45100)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 2.0ms | Allocations: 47845)
+
+
+Started GET "/admin/logout" for 127.0.0.1 at 2023-02-09 23:00:30 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2012)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 23:00:30 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 278)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-02-09 23:00:30 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 5.9ms | Allocations: 6010)
+  Rendered layout /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/layouts/active_admin_logged_out.html.erb (Duration: 25.0ms | Allocations: 27082)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 27701)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-02-09 23:00:32 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 303ms (ActiveRecord: 1.2ms | Allocations: 2673)
+
+
+Started GET "/admin" for 127.0.0.1 at 2023-02-09 23:00:32 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "complaints"."state" AS complaints_state FROM "complaints" GROUP BY "complaints"."state"[0m
+  ↳ app/admin/dashboard.rb:8:in `block (4 levels) in <main>'
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 32.0ms | Allocations: 25711)
+Completed 200 OK in 37ms (Views: 30.5ms | ActiveRecord: 2.9ms | Allocations: 27760)
+
+
+Started GET "/admin/employees" for 127.0.0.1 at 2023-02-09 23:00:33 +0200
+Processing by Admin::EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 ORDER BY "employees"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 48.6ms | Allocations: 46119)
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 2.4ms | Allocations: 48604)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1988397028693077345)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20230213194018)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230213194018"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1988397028693077345)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for 127.0.0.1 at 2023-02-13 21:41:43 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3505)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 7456)
+
+
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for 127.0.0.1 at 2023-02-13 21:43:44 +0200
+Creating scope :open. Overwriting existing method Complaint.open.
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Creating scope :open. Overwriting existing method Complaint.open.
+Creating scope :open. Overwriting existing method Complaint.open.
+Started GET "/" for 127.0.0.1 at 2023-02-13 21:46:18 +0200
+Creating scope :open. Overwriting existing method Complaint.open.
+Processing by UsersController#show as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1187)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-13 21:46:18 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 705)
+  Rendered /home/kolan4ick/.rvm/gems/ruby-3.0.3/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 4234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6873)
+Completed 200 OK in 21ms (Views: 11.1ms | ActiveRecord: 3.1ms | Allocations: 14985)
+
+
