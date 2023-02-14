@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-5 col-lg-4 layoutPage_verticalLine">
-        <div class="d-flex align-items-center cursor_pointer" onclick="change_user_action('info');">
+        <div class="d-flex align-items-center cursor_pointer" onclick="change_consumer_action('info');">
           <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="21" height="29" viewBox="0 0 21 29" fill="none">
             <path d="M19.3486 20.1883C18.8169 18.6998 17.6451 17.3846 16.0151 16.4465C14.3851 15.5085 12.3879 15 10.3333 15C8.27875 15 6.28158 15.5085 4.65156 16.4465C3.02155 17.3846 1.84979 18.6998 1.31803 20.1883" stroke="#222222" stroke-width="1.8" stroke-linecap="round"/>
             <circle cx="10.3327" cy="5.66667" r="4.66667" stroke="#222222" stroke-width="1.8" stroke-linecap="round"/>
@@ -14,11 +14,14 @@
             <div class="layoutPage_text layoutPage_text__small__extra">
               <%= @consumer.email %>
             </div>
+            <div class="layoutPage_text layoutPage_text__small__extra">
+              Баланс: <%= @consumer.balance %>
+            </div>
           </div>
         </div>
         <div class="layout_line layout_line__full mb_child"></div>
         <div class="d-none d-md-block">
-          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_user_action('orders');">Мій
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">Мій
             тариф
           </button>
           <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>
@@ -26,7 +29,7 @@
       </div>
       <!--  -->
       <div class="col-12 col-md-7 col-lg-8">
-        <div id="user_info">
+        <div id="consumer_info">
           <h1 class="h2 mb_parrent">
             Особиста інформація
           </h1>
@@ -49,7 +52,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-3">
-              <p class="layoutPage_link text-end" onclick="change_user_action('edit');">Редагувати</p>
+              <p class="layoutPage_link text-end" onclick="change_consumer_action('edit');">Редагувати</p>
             </div>
           </div>
           <div class="layout_line layout_line__full mb_child"></div>
@@ -65,9 +68,6 @@
                 <% end %>
               </p>
             </div>
-            <div class="col-12 col-md-3">
-              <p class="layoutPage_link text-end" onclick="change_user_action('address_edit');">Редагувати</p>
-            </div>
           </div>
         </div>
         <!--  -->
@@ -81,6 +81,9 @@
               <div class="row align-items-center">
                 <div class="col-12 col-lg-9">
                   <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb_child">
+                      <%= f.input :username, input_html: { class: "inputForm" }, label: "Ім'я користувача", label_html: { class: 'mb_child__small' }, placeholder: "Введіть ім'я користувача" %>
+                    </div>
                     <div class="col-12 col-md-6 mb_child">
                       <%= f.input :full_name, input_html: { class: "inputForm" }, label: "Ім’я", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваше ім'я" %>
                     </div>
@@ -139,15 +142,77 @@
           </div>
         </div>
         <!--  -->
-        <div id="user_address_edit" hidden>
-          <h2 class="mb_parrent">
-            Моя адреса
-          </h2>
+        <div id="consumer_tariff" hidden>
+          <h1 class="mb_parrent">
+            Інформація про тариф
+          </h1>
+
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-9">
+              <div class="row">
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Назва тарифу</p>
+                  <p><%= @tariff.name %></p>
+                </div>
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Ціна тарифу (місяць)</p>
+                  <p><%= @tariff.price %></p>
+                </div>
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Ціна тарифу (день) </p>
+                  <p><%= @tariff_price_per_day %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <p class="layoutPage_link text-end" onclick="change_consumer_action('change_tariff');">Змінити</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="consumer_change_tariff" hidden>
+          <h1 class="mb_parrent">
+            Зміна тарифу
+          </h1>
           <%= simple_form_for @consumer, url: registration_path(@consumer), html: { method: :put } do |f| %>
             <%= f.error_notification %>
             <div class="row align-items-center">
-              <div class="col-12 mb_child">
-                <%= f.input :address, input_html: { class: "inputForm" }, label: "Адреса", label_html: { class: 'mb_child__small', autocomplete: false }, placeholder: "Введіть Вашу адресу" %>
+              <div class="col-12 col-lg-9">
+                <div class="row align-items-center">
+                  <div class="col-12 col-md-6 mb_child">
+                    <%= f.input :username, input_html: { class: "inputForm" }, label: "Ім'я користувача", label_html: { class: 'mb_child__small' }, placeholder: "Введіть ім'я користувача" %>
+                  </div>
+                  <div class="col-12 col-md-6 mb_child">
+                    <%= f.input :full_name, input_html: { class: "inputForm" }, label: "Ім’я", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваше ім'я" %>
+                  </div>
+                  <div class="col-12 col-md-6 mb_child">
+                    <%= f.input :email, input_html: { class: "inputForm" }, label: "Електронна адреса *", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Вашу електронну скриньку", required: true, autofocus: true %>
+                  </div>
+                  <div class="col-12 col-md-6 mb_child">
+                    <%= f.input :phone, input_html: { class: "inputForm" }, label: "Номер телефону", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваш номер телефону" %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mb_child__small">
+                <div class="layout_line layout_line__full mb_child"></div>
+                Залиште ці поля порожніми, якщо ви не хочете змінювати пароль
+              </div>
+              <div class="col-12 col-md-6">
+                <%= f.input :password,
+                            required: false,
+                            input_html: { class: "inputForm", autocomplete: "new-password" },
+                            label: "Новий пароль",
+                            label_html: { class: 'mb_child__small' },
+                            placeholder: "Введіть новий пароль" %>
+              </div>
+              <div class="col-12 col-md-6">
+                <%= f.input :password_confirmation,
+                            required: false,
+                            input_html: { class: "inputForm", autocomplete: "new-password" },
+                            label: "Підтвердження нового паролю",
+                            label_html: { class: 'mb_child__small' },
+                            placeholder: "Введіть повторно новий пароль" %>
               </div>
               <div class="col-12">
                 <div class="layout_line layout_line__full mb_child"></div>
@@ -168,6 +233,10 @@
                 <%= f.button :submit, "Зберегти", class: "btn btn_fill btn__fill_green" %>
               </div>
             </div>
+            <!--  -->
+            <div class="form-actions">
+
+            </div>
           <% end %>
         </div>
       </div>
@@ -175,7 +244,7 @@
     </div>
     <div class="d-md-none">
       <div class="layout_line layout_line__full mb_child"></div>
-      <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_user_action('orders');">Мої
+      <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">Мої
         замовлення
       </button>
       <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>

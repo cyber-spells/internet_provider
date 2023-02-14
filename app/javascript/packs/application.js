@@ -15,3 +15,5 @@ ActiveStorage.start()
 import "bootstrap"
 
 import "../stylesheets/application"
+
+import "./consumers"
