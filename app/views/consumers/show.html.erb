@@ -1,0 +1,186 @@
+<main class="layoutPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5 col-lg-4 layoutPage_verticalLine">
+        <div class="d-flex align-items-center cursor_pointer" onclick="change_user_action('info');">
+          <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="21" height="29" viewBox="0 0 21 29" fill="none">
+            <path d="M19.3486 20.1883C18.8169 18.6998 17.6451 17.3846 16.0151 16.4465C14.3851 15.5085 12.3879 15 10.3333 15C8.27875 15 6.28158 15.5085 4.65156 16.4465C3.02155 17.3846 1.84979 18.6998 1.31803 20.1883" stroke="#222222" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="10.3327" cy="5.66667" r="4.66667" stroke="#222222" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div class="layoutPage_text layoutPage_text__medium">
+              <%= @consumer.full_name %>
+            </div>
+            <div class="layoutPage_text layoutPage_text__small__extra">
+              <%= @consumer.email %>
+            </div>
+          </div>
+        </div>
+        <div class="layout_line layout_line__full mb_child"></div>
+        <div class="d-none d-md-block">
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_user_action('orders');">Мій
+            тариф
+          </button>
+          <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-12 col-md-7 col-lg-8">
+        <div id="user_info">
+          <h1 class="h2 mb_parrent">
+            Особиста інформація
+          </h1>
+
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-9">
+              <div class="row">
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Повне ім'я</p>
+                  <p><%= @consumer.full_name %></p>
+                </div>
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Електронна адреса</p>
+                  <p><%= @consumer.email %></p>
+                </div>
+                <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Номер телефону</p>
+                  <p><%= @consumer.phone %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <p class="layoutPage_link text-end" onclick="change_user_action('edit');">Редагувати</p>
+            </div>
+          </div>
+          <div class="layout_line layout_line__full mb_child"></div>
+
+          <div class="row align-items-center">
+            <div class="col-12 col-md-9">
+              <p class="fw-medium">Моя адреса</p>
+              <p>
+                <% if @consumer.address.present? %>
+                  <%= @consumer.address %>
+                <% else %>
+                  Адреса не вказана
+                <% end %>
+              </p>
+            </div>
+            <div class="col-12 col-md-3">
+              <p class="layoutPage_link text-end" onclick="change_user_action('address_edit');">Редагувати</p>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div id="consumer_edit" hidden>
+          <h2 class="mb_parrent">
+            Особиста інформація
+          </h2>
+          <div>
+            <%= simple_form_for @consumer, url: registration_path(@consumer), html: { method: :put } do |f| %>
+              <%= f.error_notification %>
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-9">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb_child">
+                      <%= f.input :full_name, input_html: { class: "inputForm" }, label: "Ім’я", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваше ім'я" %>
+                    </div>
+                    <div class="col-12 col-md-6 mb_child">
+                      <%= f.input :email, input_html: { class: "inputForm" }, label: "Електронна адреса *", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Вашу електронну скриньку", required: true, autofocus: true %>
+                    </div>
+                    <div class="col-12 col-md-6 mb_child">
+                      <%= f.input :phone, input_html: { class: "inputForm" }, label: "Номер телефону", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваш номер телефону" %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mb_child__small">
+                  <div class="layout_line layout_line__full mb_child"></div>
+                  Залиште ці поля порожніми, якщо ви не хочете змінювати пароль
+                </div>
+                <div class="col-12 col-md-6">
+                  <%= f.input :password,
+                              required: false,
+                              input_html: { class: "inputForm", autocomplete: "new-password" },
+                              label: "Новий пароль",
+                              label_html: { class: 'mb_child__small' },
+                              placeholder: "Введіть новий пароль" %>
+                </div>
+                <div class="col-12 col-md-6">
+                  <%= f.input :password_confirmation,
+                              required: false,
+                              input_html: { class: "inputForm", autocomplete: "new-password" },
+                              label: "Підтвердження нового паролю",
+                              label_html: { class: 'mb_child__small' },
+                              placeholder: "Введіть повторно новий пароль" %>
+                </div>
+                <div class="col-12">
+                  <div class="layout_line layout_line__full mb_child"></div>
+                </div>
+                <div class="col-12 col-md-6 mb_child__small">
+                  <%= f.input :current_password,
+                              required: true,
+                              input_html: { class: "inputForm", autocomplete: "current-password" },
+                              label: "Поточний паороль *",
+                              label_html: { class: 'mb_child__small' },
+                              placeholder: "Введіть поточний пароль" %>
+                </div>
+                <div class="col-12 col-md-6">
+                  <p class="layoutPage_text layoutPage_text__accent">Нам потрібен ваш поточний пароль, щоб підтвердити
+                    ваші зміни</p>
+                </div>
+                <div class="col-12 mt_parrent">
+                  <%= f.button :submit, "Зберегти", class: "btn btn_fill btn__fill_green" %>
+                </div>
+              </div>
+              <!--  -->
+              <div class="form-actions">
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!--  -->
+        <div id="user_address_edit" hidden>
+          <h2 class="mb_parrent">
+            Моя адреса
+          </h2>
+          <%= simple_form_for @consumer, url: registration_path(@consumer), html: { method: :put } do |f| %>
+            <%= f.error_notification %>
+            <div class="row align-items-center">
+              <div class="col-12 mb_child">
+                <%= f.input :address, input_html: { class: "inputForm" }, label: "Адреса", label_html: { class: 'mb_child__small', autocomplete: false }, placeholder: "Введіть Вашу адресу" %>
+              </div>
+              <div class="col-12">
+                <div class="layout_line layout_line__full mb_child"></div>
+              </div>
+              <div class="col-12 col-md-6 mb_child__small">
+                <%= f.input :current_password,
+                            required: true,
+                            input_html: { class: "inputForm", autocomplete: "current-password" },
+                            label: "Поточний паороль *",
+                            label_html: { class: 'mb_child__small' },
+                            placeholder: "Введіть поточний пароль" %>
+              </div>
+              <div class="col-12 col-md-6">
+                <p class="layoutPage_text layoutPage_text__accent">Нам потрібен ваш поточний пароль, щоб підтвердити
+                  ваші зміни</p>
+              </div>
+              <div class="col-12 mt_parrent">
+                <%= f.button :submit, "Зберегти", class: "btn btn_fill btn__fill_green" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+    <div class="d-md-none">
+      <div class="layout_line layout_line__full mb_child"></div>
+      <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_user_action('orders');">Мої
+        замовлення
+      </button>
+      <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>
+    </div>
+    <!--  -->
+  </div>
+  </div>
+</main>
