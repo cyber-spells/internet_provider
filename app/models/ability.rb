@@ -6,6 +6,7 @@ class Ability
     can :read, Consumer
     can :read, Complaint
     can :read, Solved
+    can :read, ChangeTariffRequest
 
     if employee.system_admin?
       can :read, Employee
@@ -22,6 +23,7 @@ class Ability
       can :manage, Complaint
       can :manage, Consumer
       can :manage, Solved
+      can :manage, ChangeTariffRequest
     end
 
     # Define abilities for the passed in user here. For example:

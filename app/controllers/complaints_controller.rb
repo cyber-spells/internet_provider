@@ -1,4 +1,5 @@
 class ComplaintsController < ApplicationController
+  before_action :authenticate_consumer!
   def new;end
 
   def create
