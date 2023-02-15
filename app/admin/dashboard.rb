@@ -8,6 +8,9 @@ ActiveAdmin.register_page "Dashboard" do
         pie_chart Complaint.group(:state).count
       end
     end
+    div class: "map", id: "consumers_map", style: "width: max; height: 1000px;"
+
+    script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
 
     # Here is an example of a simple dashboard with columns and panels.
     #

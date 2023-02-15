@@ -80,6 +80,21 @@ ActiveAdmin.register Consumer do
       end
     end
 
+    def get_all_consumers
+
+      consumers = []
+
+      Consumer.all.map do |consumer|
+        consumers.push({ id: consumer.id, longitude: consumer.longitude,
+                         latitude: consumer.latitude, address: consumer.address,
+                         tariff: consumer.tariff.name, phone: consumer.phone })
+      end
+
+      respond_to do |format|
+        format.json { render json: { consumers: consumers } }
+      end
+    end
+
     private
 
     def consumer_params
