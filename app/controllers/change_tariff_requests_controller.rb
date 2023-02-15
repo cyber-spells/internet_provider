@@ -4,10 +4,10 @@ class ChangeTariffRequestsController < ApplicationController
 
     respond_to do |format|
       if @change_tariff_request.save!
-        format.html { redirect_to @change_tariff_request, notice: 'Change tariff request was successfully created.' }
+        format.js { render :create }
         # TODO: Add success handling for JS
       else
-        format.html { render :new }
+        format.html { render root_path }
         # TODO: Add error handling for JS
       end
     end
