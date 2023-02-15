@@ -32,6 +32,9 @@ gem "arctic_admin"
 
 gem "chartkick"
 
+# Dotenv is a simple way to manage environment variables in Ruby
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
