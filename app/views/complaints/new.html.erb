@@ -1,29 +1,29 @@
 <div class="d-flex align-items-center justify-content-center full_height">
   <div class="transparent_block">
     <div class="transparent_block__content">
-      <%= form_for :complaint, url: complaints_path, html: {class:"p-5"} do |f|%>
+      <%= form_for :complaint, url: complaints_path do |f| %>
         <div class="form-floating mb-3">
-          <%=f.text_field :consumer , class:"form-control", required: true  %>
-          <%=f.label :consumer, "Ід клієнта"  %>
+          <%= f.text_field :consumer, class: "form-control", required: true %>
+          <%= f.label :consumer, "Ід клієнта" %>
         </div>
         <div class="form-floating mb-3">
-          <%=f.text_field :user_name , class:"form-control", required: true  %>
-          <%=f.label :user_name, "ПІБ" %>
+          <%= f.text_field :user_name, class: "form-control", required: true %>
+          <%= f.label :user_name, "ПІБ" %>
         </div>
         <div class="form-floating mb-3">
-          <%=f.text_field :phone , class:"form-control", required: true  %>
-          <%=f.label :phone, "Телефон" %>
+          <%= f.text_field :phone, class: "form-control", required: true %>
+          <%= f.label :phone, "Телефон" %>
         </div>
         <div class="form-floating mb-3">
-          <%=f.text_field :address, class:"form-control", required: true  %>
-          <%=f.label :address, "Адреса" %>
+          <%= f.text_field :address, class: "form-control", required: true %>
+          <%= f.label :address, "Адреса" %>
         </div>
         <div class="form-floating mb-3">
-          <%=f.text_area :text, class:"form-control", rows: 10, required: true %>
-          <%=f.label :text, "Повідомлення"  %>
+          <%= f.text_area :text, class: "form-control", rows: 10, required: true %>
+          <%= f.label :text, "Повідомлення" %>
         </div>
-        <%= f.submit "Повідомити", class:"btn btn-outline-info btn-lg w-100"%>
-      <%end%>
+        <%= f.submit "Повідомити", class: "btn btn-outline-info btn-lg w-100" %>
+      <% end %>
     </div>
   </div>
 </div>
