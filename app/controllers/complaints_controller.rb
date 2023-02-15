@@ -1,6 +1,6 @@
 class ComplaintsController < ApplicationController
   before_action :authenticate_consumer!
-  def new;end
+  # def new;end
 
   def create
     params[:complaint][:consumer_id] = Consumer.find_by(id: params[:complaint][:consumer]).id if params[:complaint][:consumer]
@@ -15,9 +15,9 @@ class ComplaintsController < ApplicationController
     @solveds = @complaint.solveds
   end
 
-  def index
-    @complaints = Complaint.all
-  end
+  # def index
+  #   @complaints = Complaint.all
+  # end
 
   private
 

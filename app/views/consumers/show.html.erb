@@ -27,6 +27,9 @@
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('payment');">Поповнити
             баланс
           </button>
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('complaints');">Мої
+            скарги
+          </button>
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('complaint_filling');">Подати
             скаргу
           </button>
@@ -215,12 +218,19 @@
           <% end %>
         </div>
 
+        <div id="consumer_complaints" hidden>
+          <h1 class="mb_parrent">
+            Скарги
+          </h1>
+
+          <%= render ComplaintComponent.with_collection(@complaints) %>
+        </div>
         <div id="consumer_complaint_filling" hidden>
           <h1 class="mb_parrent">
             Подача скарги
           </h1>
 
-          <%= simple_form_for :complaint, url: complaints_path, remote: true do |f| %>
+          <%= simple_form_for :complaint, url: complaints_path do |f| %>
             <%= f.error_notification %>
             <div class="row align-items-center">
               <div class="col-12 col-lg-9">
@@ -284,6 +294,5 @@
       <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, class: "btn btn__icon btn__icon_hover d-block text-start" %>
     </div>
     <!--  -->
-  </div>
   </div>
 </main>

@@ -25,4 +25,6 @@ class Consumer < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   has_many :change_tariff_requests, dependent: :destroy
+
+  has_many :complaints, dependent: :destroy
 end
