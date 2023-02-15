@@ -17,3 +17,5 @@ import "bootstrap"
 import "../stylesheets/application"
 
 import "./consumers"
+
+window.Rails = Rails;

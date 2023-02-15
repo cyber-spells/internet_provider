@@ -15,7 +15,7 @@
               <%= @consumer.email %>
             </div>
             <div class="layoutPage_text layoutPage_text__small__extra">
-              Баланс: <%= @consumer.balance %>
+              Баланс: <span id="consumer_balance"><%= @consumer.balance %></span>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="col-12 col-md-6 mb_child">
                   <p class="fw-medium">Залишилось днів </p>
-                  <p><%= @remaining_days %></p>
+                  <p id="consumer_remaining_days"><%= @remaining_days %></p>
                 </div>
                 <div class="col-12 col-md-6 mb_child">
                   <p class="fw-medium">Ціна тарифу (місяць)</p>
@@ -234,7 +234,8 @@
           <% end %>
 
         </div>
-        <div id="payment" hidden=""></div>
+        <div id="consumer_liqpay_checkout" hidden>
+        </div>
       </div>
       <!--  -->
     </div>
