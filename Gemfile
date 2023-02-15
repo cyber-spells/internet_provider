@@ -32,6 +32,8 @@ gem "arctic_admin"
 
 gem "chartkick"
 
+gem 'liqpay', github: 'liqpay/sdk-ruby'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

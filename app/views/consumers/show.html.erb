@@ -24,6 +24,9 @@
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">Мій
             тариф
           </button>
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('payment');">Поповнити
+            баланс
+          </button>
           <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, class: "btn btn__icon btn__icon_hover d-block text-start" %>
         </div>
       </div>
@@ -208,6 +211,30 @@
             </div>
           <% end %>
         </div>
+        <div id="consumer_payment" hidden>
+          <h1 class="mb_parrent">
+            Поповнення рахунку
+          </h1>
+          <%= simple_form_for :refill, url: consumer_refill_url(@consumer), remote: true do |f| %>
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-9">
+                <div class="row">
+                  <div class="col-12 col-md-6 mb_child">
+                    <p><%= f.input :amount, label: "Сума" %></p>
+                  </div>
+                  <div class="col-12 col-md-6 mb_child">
+                    <p><%= f.submit "Поповнити", label: "Сума" %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <p class="layoutPage_link text-end" onclick="change_consumer_action('change_tariff');">Змінити</p>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+        <div id="payment" hidden=""></div>
       </div>
       <!--  -->
     </div>
