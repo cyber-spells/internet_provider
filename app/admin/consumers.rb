@@ -69,6 +69,14 @@ ActiveAdmin.register Consumer do
       @consumer.username = Devise.friendly_token.first(12)
       if @consumer.save!
         redirect_to admin_consumers_path, notice: 'Consumer was successfully created with password: ' + @consumer.password
+      else
+        # try to regenerate username
+        @consumer.username = Devise.friendly_token.first(12)
+        if @consumer.save!
+          redirect_to admin_consumers_path, notice: 'Consumer was successfully created with password: ' + @consumer.password
+        else
+          redirect_to admin_consumers_path, notice: 'Consumer was not created'
+        end
       end
     end
 

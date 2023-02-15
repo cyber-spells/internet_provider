@@ -6,7 +6,7 @@ class ConsumersController < ApplicationController
 
     @tariff = @consumer.tariff
 
-    @tariff_price_per_day = (@tariff.price / @tariff.expiration_days).round(2)
+    @tariff_price_per_day = (@tariff.price / @tariff.expiration_days.to_f).round(2)
 
     @remaining_days = get_remaining_days(@consumer)
 
@@ -33,7 +33,7 @@ class ConsumersController < ApplicationController
     if params[:status] == "success"
       @consumer.balance += @amount.to_i
 
-      @consumer.tariff_expiration_at = Date.current + (@consumer.balance / (@consumer.tariff.price / @consumer.tariff.expiration_days)).to_f
+      @consumer.tariff_expiration_at = Date.current + (@consumer.balance / (@consumer.tariff.price / @consumer.tariff.expiration_days.to_f)).to_f
       if @consumer.save
         respond_to do |format|
           format.json { render json: { new_balance: @consumer.balance, remaining_days: get_remaining_days(@consumer) } }
