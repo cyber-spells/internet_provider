@@ -24,7 +24,10 @@
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">Мій
             тариф
           </button>
-          <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('payment');">Поповнити
+            баланс
+          </button>
+          <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, class: "btn btn__icon btn__icon_hover d-block text-start" %>
         </div>
       </div>
       <!--  -->
@@ -155,6 +158,10 @@
                   <p><%= @tariff.name %></p>
                 </div>
                 <div class="col-12 col-md-6 mb_child">
+                  <p class="fw-medium">Залишилось днів </p>
+                  <p><%= @remaining_days %></p>
+                </div>
+                <div class="col-12 col-md-6 mb_child">
                   <p class="fw-medium">Ціна тарифу (місяць)</p>
                   <p><%= @tariff.price %></p>
                 </div>
@@ -175,70 +182,59 @@
           <h1 class="mb_parrent">
             Зміна тарифу
           </h1>
-          <%= simple_form_for @consumer, url: registration_path(@consumer), html: { method: :put } do |f| %>
-            <%= f.error_notification %>
-            <div class="row align-items-center">
-              <div class="col-12 col-lg-9">
-                <div class="row align-items-center">
-                  <div class="col-12 col-md-6 mb_child">
-                    <%= f.input :username, input_html: { class: "inputForm" }, label: "Ім'я користувача", label_html: { class: 'mb_child__small' }, placeholder: "Введіть ім'я користувача" %>
-                  </div>
-                  <div class="col-12 col-md-6 mb_child">
-                    <%= f.input :full_name, input_html: { class: "inputForm" }, label: "Ім’я", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваше ім'я" %>
-                  </div>
-                  <div class="col-12 col-md-6 mb_child">
-                    <%= f.input :email, input_html: { class: "inputForm" }, label: "Електронна адреса *", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Вашу електронну скриньку", required: true, autofocus: true %>
-                  </div>
-                  <div class="col-12 col-md-6 mb_child">
-                    <%= f.input :phone, input_html: { class: "inputForm" }, label: "Номер телефону", label_html: { class: 'mb_child__small' }, placeholder: "Введіть Ваш номер телефону" %>
+          <% if @change_tariff_request.new_record? %>
+            <%= simple_form_for @change_tariff_request, remote: true do |f| %>
+              <%= f.error_notification %>
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-9">
+                  <div class="row align-items-center">
+                    <%= f.input :consumer_id, as: :hidden, input_html: { value: @consumer.id } %>
+                    <div class="col-12 col-md-6 mb_child">
+                      <%= f.input :tariff_id, as: :select, label: "Тариф", collection: Tariff.all.map { |u| ["#{u.name}", u.id] if u.id != @consumer.tariff.id }.compact %>
+                    </div>
                   </div>
                 </div>
+                <div class="col-12 mt_parrent">
+                  <%= f.button :submit, "Створити заявку", class: "btn btn_fill btn__fill_green" %>
+                </div>
               </div>
-              <div class="col-12 mb_child__small">
-                <div class="layout_line layout_line__full mb_child"></div>
-                Залиште ці поля порожніми, якщо ви не хочете змінювати пароль
+              <!--  -->
+              <div class="form-actions">
               </div>
-              <div class="col-12 col-md-6">
-                <%= f.input :password,
-                            required: false,
-                            input_html: { class: "inputForm", autocomplete: "new-password" },
-                            label: "Новий пароль",
-                            label_html: { class: 'mb_child__small' },
-                            placeholder: "Введіть новий пароль" %>
+            <% end %>
+          <% else %>
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-9">
+                Ви вже подали заявку на зміну тарифу, будь ласка зачекайте, коли Ваша заявка буде опрацьована.
+                Зміна тарифу відбувається в кінці кожного місяця.
               </div>
-              <div class="col-12 col-md-6">
-                <%= f.input :password_confirmation,
-                            required: false,
-                            input_html: { class: "inputForm", autocomplete: "new-password" },
-                            label: "Підтвердження нового паролю",
-                            label_html: { class: 'mb_child__small' },
-                            placeholder: "Введіть повторно новий пароль" %>
-              </div>
-              <div class="col-12">
-                <div class="layout_line layout_line__full mb_child"></div>
-              </div>
-              <div class="col-12 col-md-6 mb_child__small">
-                <%= f.input :current_password,
-                            required: true,
-                            input_html: { class: "inputForm", autocomplete: "current-password" },
-                            label: "Поточний паороль *",
-                            label_html: { class: 'mb_child__small' },
-                            placeholder: "Введіть поточний пароль" %>
-              </div>
-              <div class="col-12 col-md-6">
-                <p class="layoutPage_text layoutPage_text__accent">Нам потрібен ваш поточний пароль, щоб підтвердити
-                  ваші зміни</p>
-              </div>
-              <div class="col-12 mt_parrent">
-                <%= f.button :submit, "Зберегти", class: "btn btn_fill btn__fill_green" %>
-              </div>
-            </div>
-            <!--  -->
-            <div class="form-actions">
-
             </div>
           <% end %>
         </div>
+        <div id="consumer_payment" hidden>
+          <h1 class="mb_parrent">
+            Поповнення рахунку
+          </h1>
+          <%= simple_form_for :refill, url: consumer_refill_url(@consumer), remote: true do |f| %>
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-9">
+                <div class="row">
+                  <div class="col-12 col-md-6 mb_child">
+                    <p><%= f.input :amount, label: "Сума" %></p>
+                  </div>
+                  <div class="col-12 col-md-6 mb_child">
+                    <p><%= f.submit "Поповнити", label: "Сума" %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <p class="layoutPage_link text-end" onclick="change_consumer_action('change_tariff');">Змінити</p>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+        <div id="payment" hidden=""></div>
       </div>
       <!--  -->
     </div>
@@ -247,7 +243,7 @@
       <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">Мої
         замовлення
       </button>
-      <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, remote: true, class: "btn btn__icon btn__icon_hover d-block text-start" %>
+      <%= link_to "Вихід", destroy_consumer_session_path, method: :delete, class: "btn btn__icon btn__icon_hover d-block text-start" %>
     </div>
     <!--  -->
   </div>
