@@ -3,11 +3,19 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
   content title: proc { I18n.t("active_admin.dashboard") } do
+    h2 "Complaints chart", style: "text-align: center;"
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
         pie_chart Complaint.group(:state).count
       end
     end
+    h2 "Change tariff requests chart", style: "text-align: center; margin-top: 15px;"
+    div class: "blank_slate_container", id: "dashboard_default_message_1" do
+      span class: "blank_slate" do
+        pie_chart ChangeTariffRequest.all.group_by { |change_tariff_request| change_tariff_request.tariff.name }.map { |el| [el[0], el[1].count] }
+      end
+    end
+    h2 "Map of consumers", style: "text-align: center; margin-top: 15px;"
     div class: "map", id: "consumers_map", style: "width: max; height: 1000px;"
 
     script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
