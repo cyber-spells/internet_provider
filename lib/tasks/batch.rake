@@ -1,6 +1,6 @@
 namespace :batch do
   desc "TODO"
-  task update_user_balance: :environment do
+  task update_consumer_balance: :environment do
     Consumer.all.each do |consumer|
       amount = consumer.tariff.price / consumer.tariff.expiration_days.to_f
       new_balance = consumer.balance - amount

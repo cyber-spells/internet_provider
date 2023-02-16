@@ -19,10 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: "00:00 am" do
-  rake 'batch:update_user_balance'
+every 1.day, at: "00:00" do
+  rake 'batch:update_consumer_balance'
 end
 
-every 1.month, at: "00:00 am" do
+every 1.day, at: '00:00', :if => lambda { |t| t.day == 1 } do
   rake 'batch:processing_change_tariff_requests'
 end
