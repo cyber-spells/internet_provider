@@ -8,9 +8,16 @@
 let last_opened_info_window = null;
 
 window.onload = function () {
+    const current_url = window.location.href.toString();
+
+    // if current url has / in the end, clear it
+    if (current_url[current_url.length - 1] === "/") {
+        window.location.href = current_url.substring(0, window.location.href.toString().length - 1);
+    }
 
     // if current page is /admin or /admin/dashboard
-    let currentPath = window.location.href.split("/");
+    let currentPath = current_url.split("/");
+
     if (currentPath[currentPath.length - 1] === "admin" || currentPath[currentPath.length - 1] === "dashboard") {
         // log hello world
         if (document.getElementById("consumers_map")) {
@@ -36,7 +43,7 @@ function initConsumersMap(map) {
     // get all consumers from database
     Rails.ajax({
         type: "GET",
-        url: "consumers/get_all_consumers",
+        url: "/admin/consumers/get_all_consumers",
         success: function (response) {
             response["consumers"].forEach((consumer) => {
                 let marker = null;

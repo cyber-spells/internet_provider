@@ -34,6 +34,9 @@ gem "chartkick"
 
 gem "view_component"
 
+gem 'whenever', require: false
+
+
 # Dotenv is a simple way to manage environment variables in Ruby
 gem 'dotenv-rails'
 
