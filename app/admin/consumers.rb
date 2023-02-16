@@ -80,6 +80,19 @@ ActiveAdmin.register Consumer do
       end
     end
 
+    def update
+      @consumer = Consumer.find(params[:id])
+
+      if @consumer.update(consumer_params)
+
+        # recalculate tariff_expiration_at for current tariff
+        @consumer.update(tariff_expiration_at: (Date.current + (@consumer.balance / (@consumer.tariff.price / @consumer.tariff.expiration_days.to_f)).to_f))
+
+        redirect_to admin_consumers_path, notice: 'Consumer was updated'
+
+      end
+    end
+
     def get_all_consumers
 
       consumers = []
