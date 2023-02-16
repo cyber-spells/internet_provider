@@ -196,7 +196,7 @@
                   <div class="row align-items-center">
                     <%= f.input :consumer_id, as: :hidden, input_html: { value: @consumer.id } %>
                     <div class="col-12 col-md-6 mb_child">
-                      <%= f.input :tariff_id, as: :select, label: "Тариф", collection: Tariff.all.map { |u| ["#{u.name}", u.id] if u.id != @consumer.tariff.id }.compact %>
+                      <%= f.input :tariff_id, as: :select, label: "Тариф", collection: Tariff.all.map { |u| ["#{u.name}", u.id] if u.id != @consumer.tariff.id }.compact, input_html: { class: "inputForm" }, label: "Виберіть тариф", label_html: { class: 'mb_child__small' } %>
                     </div>
                   </div>
                 </div>
@@ -236,19 +236,19 @@
               <div class="col-12 col-lg-9">
                 <div class="align-items-center">
                   <div class="form-floating mb-3">
-                    <%= f.input :consumer_id, as: :hidden, input_html: { value: @consumer.id }, class: "form-control", required: true %>
+                    <%= f.input :consumer_id, as: :hidden, input_html: { value: @consumer.id}, class: "form-control", required: true%>
                   </div>
                   <div class="form-floating mb-3">
-                    <%= f.input :user_name, input_html: { value: @consumer.full_name }, class: "form-control", label: "ПІБ", required: true %>
+                    <%= f.input :user_name, input_html: { value: @consumer.full_name, class: "inputForm"  }, class: "form-control", label: "ПІБ", label_html: { class: 'mb_child__small' }, required: true %>
                   </div>
                   <div class="form-floating mb-3">
-                    <%= f.input :phone, input_html: { value: @consumer.phone }, class: "form-control", label: "Телефон", required: true %>
+                    <%= f.input :phone, input_html: { value: @consumer.phone, class: "inputForm"  }, class: "form-control", label: "Телефон", label_html: { class: 'mb_child__small' }, required: true %>
                   </div>
                   <div class="form-floating mb-3">
-                    <%= f.input :address, input_html: { value: @consumer.address }, label: "Адреса", class: "form-control", required: true %>
+                    <%= f.input :address, input_html: { value: @consumer.address, class: "inputForm"  }, label: "Адреса", class: "form-control", label_html: { class: 'mb_child__small' }, required: true %>
                   </div>
                   <div class="form-floating mb-3">
-                    <%= f.input :text, as: :text, class: "form-control", label: "Повідомлення", required: true %>
+                    <%= f.input :text, as: :text, class: "form-control", input_html: { class: "inputForm" }, label: "Повідомлення",  label_html: { class: 'mb_child__small' }, required: true %>
                   </div>
                 </div>
               </div>
@@ -271,7 +271,7 @@
             <div class="row align-items-center">
               <div class="col-12 col-lg-9">
                 <div class="mb_child">
-                  <p><%= f.input :amount, label: "Сума" %></p>
+                  <p><%= f.input :amount, label: "Сума", input_html: { class: "inputForm" }, label_html: { class: 'mb_child__small' } %></p>
                 </div>
                 <div class="mb_child">
                   <p><%= f.submit "Поповнити", class: "btn btn_fill btn__fill_green" %></p>

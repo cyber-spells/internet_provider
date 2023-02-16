@@ -1,8 +1,73 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,700;1,100;1,200;1,400;1,500;1,700&display=swap');
+
+$font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+//Font weights
+$fw-thin: 100;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+$fw-black: 800;
+
+//Font sizes
+$fs-base-mobile: 14px;
+$fs-base-desktop: 16px;
+
+$fs-xs: .75rem;
+$fs-s: .875rem;
+$fs-base: 1rem;
+$fs-m: 1.125rem;
+$fs-l: 1.25rem;
+$fs-xl: 1.5rem;
+$fs-xxl: 2rem;
+$fs-xxxl: 2.25rem;
+$fs-xxxxl: 2.5rem;
+
+//Line heights
+$lh-base: 1.2;
+$lh-sm: 1.28;
+$lh-lg: 1.65;
+
+// layout
+$navbar-height: 100px;
+
+//Border radius
+$br-circle: 999px;
+$br-button: 0;
+$br-card: 35px;
+$br-input: 50px;
+
+//colors
+$color-primary-base: #00b4d8;
+$color-primary-light: #a8dadc;
+
+$color-secondary-base: #cdb4db;
+
+$color-error-base: #BA0E0E;
+
+$color-neutral-base: #242423;
+$color-neutral-text: #333533;
+
+$color-black: #000000;
+$color-white: #FFF;
+
+$color-background-base: #fff;
+
+// breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-sm-max: 575px;
+$breakpoint-md: 768px;
+$breakpoint-md-max: 767px;
+$breakpoint-lg: 992px;
+$breakpoint-lg-max: 991px;
+$breakpoint-xl: 1200px;
+$breakpoint-xl-max: 1199px;
+$breakpoint-xxl: 1400px;
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font;
 }
 
 .full_height{
@@ -57,5 +122,536 @@ body{
     border: 1px solid #fff;
     h4{
         min-width: 200px;
+    }
+}
+
+.layout{
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $breakpoint-md) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        margin-bottom: 60px;
+    }
+
+    &:first-of-type{
+        margin-bottom: 0px;
+    }
+
+    &:last-of-type{
+        margin-bottom: 0px;
+    }
+
+    &_my{
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $breakpoint-md) {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        &_special{
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            @media screen and (min-width: $breakpoint-md) {
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &_mb{
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $breakpoint-md) {
+            margin-bottom: 30px;
+        }
+    
+        @media screen and (min-width: $breakpoint-xl) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &_img{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        height: 300px;
+
+        @media screen and (min-width: $breakpoint-md) {
+            height: 350px;
+        }
+    
+        @media screen and (min-width: $breakpoint-xl) {
+            height: 400px;
+        }
+
+        img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: -1;
+        }
+        
+    }
+
+    &_line{
+        width: 100%;
+        max-width: 530px;
+        height: 1px;
+        background-color: $color-black;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        
+        @media screen and (min-width: $breakpoint-md) {
+            margin-top: 20px;
+        }
+        
+        &__full{
+            max-width: 100%;
+        }
+        
+        &__light{
+            background-color: $color-primary-light;
+        }
+
+        &__white{
+            background-color: $color-white;
+        }
+    }
+
+    &_bg{
+        background-color: $color-primary-base;
+        padding: 20px 0px;
+
+        @media screen and (min-width: $breakpoint-md) {
+            padding: 50px 0px;
+        }
+
+        &_img{
+            width: 100%;
+            max-width: 485px;
+            object-fit: cover;
+            object-position: center;
+            margin-bottom: 25px;
+
+            @media screen and (min-width: $breakpoint-md) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &_header{
+        background-color: $color-primary-light;
+        color: $color-white;
+        height: 120px;
+        user-select: none;
+
+        @media screen and (min-width: $breakpoint-md) {
+            height: 160px;
+        }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            height: 200px;
+        }
+    }
+}
+
+.layoutPage{
+    min-height: 450px;
+    padding: 30px 0px 20px;
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 40px 0px;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        padding: 60px 0px;
+    }
+
+    &_name{
+        font-weight: $fw-medium;
+        margin-right: 10px;
+    }
+
+    &_text{
+        color: $color-neutral-text;
+        
+        &__small{
+            font-size: $fs-s;
+            &__extra{
+                font-size: $fs-xs; 
+            }
+        }
+        
+        &__medium{
+            font-size: $fs-base-mobile;
+        }
+
+        &__accent{
+            color: $color-secondary-base;
+        }
+    }
+
+    &_chapter{
+        padding: 15px 0px;
+        border-top: 1px solid $color-neutral-text;
+        border-bottom: 1px solid $color-neutral-text;
+    }
+
+    &_cartCard{
+        border-bottom: 1px solid $color-neutral-text;
+        &__top{
+            border-top: 1px solid $color-neutral-text;
+            border-bottom: none;
+        }
+    }
+
+    &_cartImg{
+        height: 170px;
+    }
+
+    &_verticalLine{
+        @media screen and (min-width: $breakpoint-md) {
+            border-right: 1px solid $color-black;
+        }
+    }
+
+    &_link{
+        color: $color-secondary-base;
+        cursor: pointer;
+        user-select: none;
+        transition: all .5s ease;
+        @media screen and (min-width: $breakpoint-lg) {
+            &:hover{
+                color: $color-primary-base;
+            }
+        }
+    }
+}
+
+.mb_child{
+    margin-bottom: 20px!important;
+  
+    @media screen and (max-width: $breakpoint-md-max) {
+      &_small{
+        margin-bottom: 10px;
+      }
+    }
+  
+    &__small{
+      margin-bottom: 10px;
+    }
+  }
+
+  .mb_parrent{
+    margin-bottom: 20px;
+  
+    @media screen and (min-width: $breakpoint-md) {
+        margin-bottom: 30px;
+    }
+  
+    @media screen and (min-width: $breakpoint-lg) {
+        margin-bottom: 40px; 
+    }
+  }
+
+  .inputForm{
+    width: 100%;
+    min-height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid $color-primary-light;
+    transition: all .5s ease;
+    &[type="number"]{
+        -moz-appearance: textfield;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &:focus{
+        outline: none;
+        box-shadow: none;
+        border: 1px solid $color-neutral-text;
+    }
+}
+
+label{
+    abbr{
+        display: none;
+    }
+}
+
+.btn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: $br-button;
+    transition: all .5s ease-in;
+    &:focus{
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &__180{
+        width: 180px;
+    }
+
+    &__420{
+        width: 100%;
+        max-width: 420px;
+    }
+
+    &__fill{
+        backdrop-filter: blur(10px);
+        &_green{
+            background-color: $color-primary-light;
+           
+            @media screen and (min-width: $breakpoint-lg) {
+                &:hover{
+                    background-color: rgba($color-white, .3);
+                }
+            }
+            
+            &:focus, &:active{
+                background-color: $color-primary-base;
+                border: 1px solid $color-primary-base;
+            }
+        }
+        &_darkgreen{
+            background-color: $color-primary-base;
+            
+            &:focus, &:active{
+                background-color: $color-primary-base;
+                border: 1px solid $color-primary-base;
+            }
+            
+            @media screen and (min-width: $breakpoint-lg) {
+                &:hover{
+                    background-color: $color-primary-light;
+                }
+            }
+
+        }
+    }
+
+    &_border{
+        color: $color-black;
+        border: 1px solid $color-black;
+        @media screen and (min-width: $breakpoint-lg) {
+            &:focus{
+                background-color: $color-primary-base;
+                border: 1px solid $color-primary-base; 
+            }
+            
+            &:hover{
+                background-color: $color-primary-light;
+                border: 1px solid $color-primary-light;
+            }
+
+            &:active{
+                background-color: $color-primary-base;
+                border: 1px solid $color-primary-base; 
+            }
+        }
+
+        &__white{
+            color: $color-white;
+            border-color: $color-white;
+            @media screen and (min-width: $breakpoint-lg) {
+                &:hover{
+                    background-color: rgba($color-white, .3);
+                    backdrop-filter: blur(10px);
+                }
+            }
+        }
+        
+    }
+
+    &-close{
+        position: absolute;
+        top: 30px;
+        right: 25px;
+
+        @media screen and (min-width: $breakpoint-md) {
+            top: 35px;
+            right: 30px;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            top: 40px;
+            right: 35px;
+        }
+        
+        &:focus, &:active{
+            outline: none;
+            box-shadow: none;
+            border: none;
+        }
+    }
+
+    &__cart{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        border: none;
+        padding: 0;
+
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+
+        @media screen and (min-width: $breakpoint-xxl) {
+            position: relative;
+            right: 0px;
+            svg{
+                width: auto;
+                height: auto;
+            }
+        }
+
+        &:focus, &:active{
+            outline: none;
+            box-shadow: none;
+            border: none;
+        }
+    }
+
+    &__icon{
+        padding: 10px 0px;
+        border: none;
+        svg{
+            margin-left: 10px;
+            fill:none;
+            transition: all .5s ease;
+            path{
+                transition: all .5s ease;
+            }
+        }
+        &_active{
+            svg{
+                fill: $color-error-base;
+            }
+        }
+        @media screen and (min-width: $breakpoint-lg) {
+            &__hover{
+                &:hover{
+                    border: none;
+                    svg{
+                        fill: rgba($color-error-base, .35);
+                    }
+                }
+            }
+
+            &__text{
+                &:hover{
+                    color: $color-secondary-base;
+                    svg{
+                        path{
+                            stroke: $color-secondary-base;;
+                        }
+                    }
+                }
+            }
+
+            &_active{
+                &:hover{
+                    svg{
+                        fill: $color-error-base;
+                    }
+                }
+            }
+
+            &:focus, &:active{
+                border: none;
+            }
+        }
+        &_after{
+            &::after{
+                content: "";
+                position: absolute;
+                right: 8px;
+                top: 5px;
+                width: 9px;
+                height: 15px;
+                display: block;
+                margin-left: auto;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='15' viewBox='0 0 9 15' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.93685 0.74935C1.14432 0.541883 1.48068 0.541883 1.68815 0.74935L8.06315 7.12435C8.27062 7.33182 8.27062 7.66818 8.06315 7.87565L1.68815 14.2507C1.48068 14.4581 1.14432 14.4581 0.93685 14.2507C0.729383 14.0432 0.729383 13.7068 0.93685 13.4993L6.9362 7.5L0.93685 1.50065C0.729383 1.29318 0.729383 0.956816 0.93685 0.74935Z' fill='black'/%3E%3C/svg%3E");
+                transition: all .5s ease;
+                transform: rotate(90deg);
+            }
+        
+            &.collapsed{
+                &::after{
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        &_hover{
+            padding-left: 10px;
+            @media screen and (min-width: $breakpoint-lg) {
+                &:hover{
+                    background-color: $color-primary-base;
+                }
+            }
+        }
+    }
+
+    &__noAction{
+        cursor: auto;
+        background-color: $color-primary-light;
+        border: none;
+        &:hover{
+            background-color: $color-primary-light;
+        }
+    }
+
+    &_countBadge{
+        position: absolute;
+        right: -8px;
+        top: -5px;
+        background-color: rgba($color-primary-base, .8);
+        color: $color-white;
+        display: flex;
+        width: 22px;
+        height: 22px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        font-size: $fs-s;
+        @media screen and (min-width: $breakpoint-lg) {
+            right: -10px;
+            top: -15px;
+        }
+    }
+
+    &_noEvent{
+        opacity: .5;
+        pointer-events: none;
     }
 }
