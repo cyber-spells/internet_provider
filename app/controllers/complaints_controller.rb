@@ -13,6 +13,9 @@ class ComplaintsController < ApplicationController
   def show
     @complaint = Complaint.find(params[:id])
     @solveds = @complaint.solveds
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   # def index
