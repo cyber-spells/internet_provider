@@ -6,21 +6,17 @@ class ComplaintsController < ApplicationController
     params[:complaint][:consumer_id] = Consumer.find_by(id: params[:complaint][:consumer]).id if params[:complaint][:consumer]
     @complaint = Complaint.new(complaint_params)
     if @complaint.save
-      redirect_to @complaint
+      redirect_to root_path
     end
   end
 
-  def show
+  def get_complaint
     @complaint = Complaint.find(params[:id])
     @solveds = @complaint.solveds
     respond_to do |format|
       format.js {}
     end
   end
-
-  # def index
-  #   @complaints = Complaint.all
-  # end
 
   private
 

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   post 'consumers/:id/update_balance', to: 'consumers#update_balance', as: 'consumer_update_balance'
 
-  resources :complaints, only: [:new, :create, :show]
+  resources :complaints, only: [:new, :create]
+  get 'get_complaint/:id', to: 'complaints#get_complaint', as: 'get_complaint'
 
   root to: 'consumers#show'
 

@@ -20,6 +20,7 @@ import "../stylesheets/application"
 import "./consumers"
 
 window.Rails = Rails;
+window.bootstrap = bootstrap;
 
 document.addEventListener("turbolinks:load", ()=>{
     randomValues();
