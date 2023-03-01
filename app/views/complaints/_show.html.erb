@@ -1,15 +1,15 @@
 <div class="">
-  <h3 class="mb-3">Скарга <span class="info">№<%= @complaint.id %> (статус <%= @complaint.state %>)</span></h1>
-  <p>номер абонента: <span class="info"><%= @complaint.consumer&.id %></span></p>
-  <p>телефон: <span class="info"><%= @complaint.phone %></span></p>
-  <p>адреса: <span class="info"><%= @complaint.address %></span></p>
-  <p>відповідальний: <span class="info"><%= @complaint.employee.name unless @complaint.employee.nil? %></span></p>
-  <p>Зміст проблеми: <span class="info"><%= @complaint.text %></span></p>
-  <hr>
-  <div class="mb_parrent">
-    <%= render @solveds %>
-  </div>
-  <div class="d-flex justify-content-center ">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  </div>
+  <h3 class="mb-3">Скарга <span class="info">№<%= @complaint.id %> (статус <%= @complaint.state %>)</span></h3>
+    <p>номер абонента: <span class="info"><%= @complaint.consumer&.id %></span></p>
+    <p>телефон: <span class="info"><%= @complaint.phone %></span></p>
+    <p>адреса: <span class="info"><%= @complaint.address %></span></p>
+    <p>відповідальний: <span class="info"><%= @complaint.employee.name unless @complaint.employee.nil? %></span></p>
+    <p>Зміст проблеми: <span class="info"><%= @complaint.text %></span></p>
+    <hr>
+    <div class="mb_parrent">
+      <%= render @solveds %>
+    </div>
+    <div class="d-flex justify-content-center ">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
 </div>

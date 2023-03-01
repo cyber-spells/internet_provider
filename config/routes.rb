@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :consumers
+  devise_for :consumers, controllers: {sessions: 'consumers/sessions', registrations: 'consumers/registrations'}
 
   get "admin/consumers/get_all_consumers", as: "get_all_consumers"
 

@@ -13,7 +13,9 @@ ActiveAdmin.register Consumer do
     column :address
     column :longitude
     column :latitude
-    column :tariff_id
+    column :tariff_id do |consumer|
+      link_to consumer.tariff.name, admin_tariff_path(consumer.tariff) if consumer.tariff
+    end
     column :balance
     column :tariff_expiration_at
     actions

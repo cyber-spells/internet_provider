@@ -27,6 +27,8 @@ module InternetProvider
     config.time_zone = 'Europe/Kyiv'
     config.active_record.default_timezone = :local
 
+    config.i18n.available_locales = [:uk]
+    config.i18n.default_locale = :uk
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
