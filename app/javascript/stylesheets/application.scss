@@ -603,3 +603,10 @@ label{
     border-radius: $br-card;
     color: $color-white;
 }
+
+.modal{
+    &-content{
+        border-radius: 0px!important;
+        border: none;
+    }
+}
