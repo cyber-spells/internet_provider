@@ -196,7 +196,7 @@
                   <div class="row align-items-center">
                     <%= f.input :consumer_id, as: :hidden, input_html: { value: @consumer.id } %>
                     <div class="col-12 col-md-6 mb_child">
-                      <%= f.input :tariff_id, as: :select, label: "Тариф", collection: Tariff.all.map { |u| ["#{u.name}", u.id] if u.id != @consumer.tariff.id }.compact, input_html: { class: "inputForm" }, label: "Виберіть тариф", label_html: { class: 'mb_child__small' } %>
+                      <%= f.input :tariff_id, as: :select, collection: Tariff.all.map { |u| ["#{u.name}", u.id] if u.id != @consumer.tariff.id }.compact, input_html: { class: "inputForm" }, label: "Виберіть тариф", label_html: { class: 'mb_child__small' } %>
                     </div>
                   </div>
                 </div>

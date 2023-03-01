@@ -212,6 +212,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    sendpulse (0.0.5)
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -272,6 +273,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.6)
   sass-rails (>= 6)
+  sendpulse
   simple_form
   spring
   turbolinks (~> 5)

@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+  require 'sendpulse/smtp_service'
+
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_defaults
 
   protect_from_forgery
 
@@ -8,6 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def set_defaults
+    @smtp_service = SendPulse::SmtpService.new(ENV['SENDPULSE_CLIENT_ID'], ENV['SENDPULSE_CLIENT_SECRET'], 'https', nil)
+  end
 
   def configure_permitted_parameters
     added_attrs = [:username, :phone, :full_name, :tariff_id, :email, :password, :password_confirmation, :remember_me]

@@ -36,6 +36,7 @@ gem "view_component"
 
 gem 'whenever', require: false
 
+gem 'sendpulse'
 
 # Dotenv is a simple way to manage environment variables in Ruby
 gem 'dotenv-rails'

@@ -69,6 +69,23 @@ ActiveAdmin.register Consumer do
       @consumer.username = Devise.friendly_token.first(12)
       if @consumer.save!
         redirect_to admin_consumers_path, notice: 'Consumer was successfully created with password: ' + @consumer.password
+
+        email = {
+          html: render_to_string(:partial => 'admin/consumers/create_email_template', :locals => { consumer: @consumer, password: @consumer.password }),
+          text: 'Text',
+          subject: 'Вас акаунт було створено на сайті провайдера ZizenCom',
+          from: {
+            name: 'ZizenCom',
+            email: 'zyzen.vasyl@student.uzhnu.edu.ua'
+          },
+          to: [
+            {
+              email: @consumer.email
+            }
+          ]
+        }
+
+        @smtp_service.send_email(email)
       else
         # try to regenerate username
         @consumer.username = Devise.friendly_token.first(12)
