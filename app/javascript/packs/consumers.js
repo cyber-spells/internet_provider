@@ -35,15 +35,7 @@ function onPay(consumer_id, amount) {
     sha.update(privateKey + data_liq + privateKey);
     var signature = sha.getHash("B64");
     window.LiqPayCheckoutCallback = function () {
-        LiqPayCheckout.init({
-            data: data_liq,
-            signature: signature,
-            embedTo: "#consumer_liqpay_checkout",
-            language: "uk",
-            mode: "embed" // embed || popup
-        }).on("liqpay.callback", function (data) {
-            console.log(data.status);
-            console.log(data);
+        let callbackFunction = function (data) {
             if (data.status === 'success') {
                 Rails.ajax({
                     type: "POST",
@@ -58,13 +50,20 @@ function onPay(consumer_id, amount) {
                         console.log("error")
                     }
                 })
+                // Remove the event listener for liqpay.callback
+                LiqPayCheckout.off("liqpay.callback", callbackFunction);
             }
-        }).on("liqpay.ready", function (data) {
-            // ready
-        }).on("liqpay.close", function (data) {
-            // close
-        });
+        };
+
+        LiqPayCheckout.init({
+            data: data_liq,
+            signature: signature,
+            embedTo: "#consumer_liqpay_checkout",
+            language: "uk",
+            mode: "embed" // embed || popup
+        }).on("liqpay.callback", callbackFunction);
     };
+
     LiqPayCheckoutCallback.call()
 }
 
