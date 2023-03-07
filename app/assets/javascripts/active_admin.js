@@ -10,6 +10,38 @@ let last_opened_info_window = null;
 window.onload = function () {
     const current_url = window.location.href.toString();
 
+    if (document.getElementById("consumer_map")) {
+        let consumerMap = new google.maps.Map(document.getElementById("consumer_map"), {
+            zoom: 14,
+            center: {
+                lat: 48.6208,
+                lng: 22.2879
+            },
+        });
+        let marker = null;
+        // handle click on map
+        google.maps.event.addListener(consumerMap, "click", (event) => {
+            // get latitude and longitude
+            let latitude = event.latLng.lat();
+            let longitude = event.latLng.lng();
+
+            // set latitude and longitude to input fields and create marker
+            document.getElementById("consumer_latitude").value = latitude;
+            document.getElementById("consumer_longitude").value = longitude;
+
+            if (marker != null) {
+                let latLng = new google.maps.LatLng(latitude, longitude);
+                marker.setPosition(latLng);
+            } else marker = new google.maps.Marker({
+                position: {
+                    lat: latitude,
+                    lng: longitude
+                }
+            });
+
+            marker.setMap(consumerMap);
+        });
+    }
     // if current url has / in the end, clear it
     if (current_url[current_url.length - 1] === "/") {
         window.location.href = current_url.substring(0, window.location.href.toString().length - 1);

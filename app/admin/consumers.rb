@@ -33,6 +33,7 @@ ActiveAdmin.register Consumer do
   filter :tariff_expiration_at
 
   form do |f|
+    script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
     f.inputs "Consumer Details" do
       f.input :email
       f.input :full_name
@@ -40,6 +41,8 @@ ActiveAdmin.register Consumer do
       f.input :address
       f.input :longitude, as: :string
       f.input :latitude, as: :string
+      h2 "Карта споживачів", style: "text-align: center; margin-top: 15px;"
+      div class: "map", id: "consumer_map", style: "width: max; height: 1000px;"
       f.input :tariff_id, as: :select, collection: Tariff.all.map { |u| ["#{u.name}", u.id] }
       f.input :balance
       f.input :tariff_expiration_at
