@@ -78,7 +78,7 @@ ActiveAdmin.register Consumer do
         email = {
           html: render_to_string(:partial => 'admin/consumers/create_email_template', :locals => { consumer: @consumer, password: @consumer.password }),
           text: 'Text',
-          subject: 'Вас акаунт було створено на сайті провайдера ZizenCom',
+          subject: 'Ваш акаунт було створено на сайті провайдера ZizenCom',
           from: {
             name: 'ZizenCom',
             email: 'zyzen.vasyl@student.uzhnu.edu.ua'
