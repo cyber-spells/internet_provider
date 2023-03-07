@@ -29,4 +29,6 @@ class Consumer < ApplicationRecord
   has_many :change_tariff_requests, dependent: :destroy
 
   has_many :complaints, dependent: :destroy
+
+  has_many :payments, dependent: :destroy
 end

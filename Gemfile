@@ -22,6 +22,10 @@ gem 'webpacker', '~> 5.0'
 
 gem "devise"
 
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'
+
 gem "simple_form"
 
 gem "activeadmin"

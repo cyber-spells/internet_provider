@@ -1,0 +1,13 @@
+<div class="">
+  <h3 class="mb-3"><span class="info"><%= @payment.title %> (сума <%= @payment.sum %>)</span></h3>
+  <p>Тариф: <span class="info"><%= @payment.tariff.name %></span></p>
+  <p class="text-muted"><%= @payment.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+  <div class="row d-flex">
+    <div class="col-6">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+    </div>
+    <div class="col-6">
+      <%= link_to "Завантажити PDF", download_payment_path(format: "pdf"), class: "btn btn-info", target: "_blank" %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :consumers, controllers: {sessions: 'consumers/sessions', registrations: 'consumers/registrations'}
+  devise_for :consumers, controllers: { sessions: 'consumers/sessions', registrations: 'consumers/registrations' }
 
   get "admin/consumers/get_all_consumers", as: "get_all_consumers"
 
@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :complaints, only: [:new, :create]
   get 'get_complaint/:id', to: 'complaints#get_complaint', as: 'get_complaint'
+
+  get 'get_payment/:id', to: 'payments#get_payment', as: 'get_payment'
+
+  get 'download_payment/:id', to: 'payments#download_payment', as: 'download_payment'
 
   root to: 'consumers#show'
 

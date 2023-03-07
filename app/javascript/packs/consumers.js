@@ -45,6 +45,9 @@ function onPay(consumer_id, amount) {
                         window.scroll(0, 0);
                         document.querySelector("#consumer_balance").innerHTML = parseFloat(response["new_balance"]).toFixed(2);
                         document.querySelector("#consumer_remaining_days").innerHTML = response["remaining_days"];
+
+                        // Assuming that response[payment] contains the payment data
+                        document.querySelector("#consumer_payments").append(generatePayment(response["payment"]));
                     },
                     error: function (response) {
                         console.log("error")
@@ -67,6 +70,45 @@ function onPay(consumer_id, amount) {
     LiqPayCheckoutCallback.call()
 }
 
+function generatePayment(payment) {
+    // Create the parent div element
+    const parentDiv = document.createElement("div");
+    parentDiv.classList.add("layoutPage_chapter");
+
+    // Create the link element
+    const link = document.createElement("a");
+    link.setAttribute("href", `get_payment/${payment.id}`);
+    link.classList.add("layoutPage_link");
+    link.setAttribute("data-remote", true);
+    link.setAttribute("data-bs-target", "#paymentModal");
+
+    // Create the h4 element and its content
+    const h4 = document.createElement("h4");
+    const h4Text = document.createTextNode(`Платіж №${payment.id}`);
+    const small = document.createElement("small");
+    small.classList.add("ms-3");
+    const smallText = document.createTextNode(`(сума ${payment.sum})`);
+
+    // Append the content to the h4 element
+    h4.appendChild(h4Text);
+    small.appendChild(smallText);
+    h4.appendChild(small);
+
+    // Create the p element and its content
+    const p = document.createElement("p");
+    const pText = document.createTextNode(payment.created_at);
+    p.classList.add("text-muted");
+    p.appendChild(pText);
+
+    // Append the h4 and p elements to the link element
+    link.appendChild(h4);
+    link.appendChild(p);
+
+    // Append the link element to the parent div element
+    parentDiv.appendChild(link);
+
+    return parentDiv;
+}
 
 window.change_consumer_action = change_consumer_action;
 window.onPay = onPay;

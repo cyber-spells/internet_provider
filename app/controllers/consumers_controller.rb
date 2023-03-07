@@ -12,6 +12,8 @@ class ConsumersController < ApplicationController
 
     @complaints = @consumer.complaints
 
+    @payments = @consumer.payments
+
     if @consumer.change_tariff_requests.any? && @consumer.change_tariff_requests.last.processed == false
       @change_tariff_request = @consumer.change_tariff_requests.last
     else
@@ -37,8 +39,12 @@ class ConsumersController < ApplicationController
 
       @consumer.tariff_expiration_at = Date.current + (@consumer.balance / (@consumer.tariff.price / @consumer.tariff.expiration_days.to_f)).to_f
       if @consumer.save
-        respond_to do |format|
-          format.json { render json: { new_balance: @consumer.balance, remaining_days: get_remaining_days(@consumer) } }
+        # Create payment
+        @payment = Payment.new(title: "Оплата тарифу #{@consumer.tariff.name} користувачем #{@consumer.full_name}", consumer_id: @consumer.id, sum: @amount, tariff: @consumer.tariff)
+        if @payment.save
+          respond_to do |format|
+            format.json { render json: { new_balance: @consumer.balance, remaining_days: get_remaining_days(@consumer), payment: { id: @payment.id, sum: @payment.sum.to_s, created_at: @payment.created_at.strftime("%d.%m.%Y %H:%M") } } }
+          end
         end
       end
     end

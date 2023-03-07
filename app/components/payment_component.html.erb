@@ -1,0 +1,6 @@
+<div class="layoutPage_chapter">
+  <%= link_to get_payment_path(@payment.id), class: "layoutPage_link", remote: true, data: { bs_target: '#paymentModal' } do %>
+    <h4 class=""><%= "Платіж №#{@payment.id}" %><small class="ms-3">(сума <%= @payment.sum %>)</small></h4>
+    <p class="text-muted"><%= @payment.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+  <% end %>
+</div>

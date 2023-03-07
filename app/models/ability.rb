@@ -7,6 +7,7 @@ class Ability
     can :read, Complaint
     can :read, Solved
     can :read, ChangeTariffRequest
+    can :read, Payment
 
     if employee.system_admin?
       can :read, Employee
@@ -17,6 +18,7 @@ class Ability
     if employee.admin?
       can :manage, Employee
       can :manage, Tariff
+      can :manage, Payment
     end
 
     if employee.admin? || employee.system_admin?

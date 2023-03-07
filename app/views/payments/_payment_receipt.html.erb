@@ -1,0 +1,6 @@
+<div class="">
+  <h3 class="mb-3"><span class="info"><%= payment.title %></span></h3>
+  <p>Сума: <span class="info"><%= payment.sum %></span></p>
+  <p>Тариф: <span class="info"><%= payment.tariff.name %></span></p>
+  <p class="text-muted"><%= payment.created_at.strftime("%d.%m.%Y %H:%M") %></p>
+</div>
