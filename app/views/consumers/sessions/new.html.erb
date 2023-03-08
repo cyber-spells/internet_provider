@@ -1,21 +1,21 @@
-<div class="square"></div>
-<div class="square"></div>
-<div class="square"></div>
-<div class="square"></div>
-<div class="square"></div>
-
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
-<div class="triangle"></div>
-<div class="triangle"></div>
-<div class="triangle"></div>
-<div class="triangle"></div>
-<div class="triangle"></div>
 <main class="layoutPage layoutPage__full bg_dark">
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
+  <div class="triangle"></div>
   <div class="box">
     <h2 class="text-center mb_child">Увійти</h2>
 
@@ -25,15 +25,18 @@
         <%= f.text_field :login, autofocus: true, class: "inputForm inputForm__special" %>
       </div>
 
-      <div class="field mb_parrent">
+      <div class="field mb-2">
         <%= f.label :password, "Пароль", class: 'mb_child__small' %>
         <%= f.password_field :password, autocomplete: "current-password", class: "inputForm inputForm__special" %>
       </div>
+      <div class="text-end mb_parrent">
+        <%= render "consumers/shared/links" %>
+      </div>
 
-      <div class="actions text-center">
+      <div class="actions text-center ">
         <%= f.submit "Увійти", class: "btn btn_fill btn__fill_green" %>
       </div>
-      <%= render "consumers/shared/links" %>
+      
     <% end %>
   </div>
 </main>
