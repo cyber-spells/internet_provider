@@ -39,7 +39,7 @@ ActiveAdmin.register Complaint do
       state: Complaint.states[:close_without_resolved],
     )
 
-    redirect_to resource, notice: "Закрито!"
+    redirect_to admin_complaint_path(resource), notice: "Закрито!"
   end
 
   show do |complaint|

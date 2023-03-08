@@ -14,8 +14,7 @@ if defined?(ActionMailer)
 
       @token = token
 
-      # TODO add production host
-      default_url_options[:host] = 'localhost:3000' if Rails.env.development?
+      default_url_options[:host] = Rails.env.development? ? 'localhost:3000' : 'http://46.101.202.118'
 
       @resource = record
       # send email to consumer
