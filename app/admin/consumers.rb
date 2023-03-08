@@ -33,7 +33,7 @@ ActiveAdmin.register Consumer do
   filter :tariff_expiration_at
 
   form do |f|
-    script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
+    script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly&language=uk"
     f.inputs "Consumer Details" do
       f.input :email
       f.input :full_name
@@ -57,7 +57,7 @@ ActiveAdmin.register Consumer do
       row :full_name
       row :phone
       row :address
-      script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
+      script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly&language=uk"
       h2 "Карта споживача", style: "text-align: center; margin-top: 15px;"
       div class: "map", id: "current_consumer_map", style: "width: max; height: 1000px;"
       row :longitude do

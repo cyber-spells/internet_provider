@@ -29,6 +29,17 @@ window.onload = function () {
             document.getElementById("consumer_latitude").value = latitude;
             document.getElementById("consumer_longitude").value = longitude;
 
+            // Perform a reverse geocoding lookup
+            let geocoder = new google.maps.Geocoder();
+            geocoder.geocode({'location': event.latLng}, function (results, status) {
+                if (status === 'OK') {
+                    // Get the formatted address from the first result
+                    document.querySelector("#consumer_address").value = results[0].formatted_address;
+                } else {
+                    console.log('Geocoder failed due to: ' + status);
+                }
+            });
+
             if (marker != null) {
                 let latLng = new google.maps.LatLng(latitude, longitude);
                 marker.setPosition(latLng);
