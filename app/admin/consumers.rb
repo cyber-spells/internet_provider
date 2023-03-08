@@ -57,8 +57,19 @@ ActiveAdmin.register Consumer do
       row :full_name
       row :phone
       row :address
-      row :longitude
-      row :latitude
+      script src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXDQwrbDQ-1XjW9DiYxadgiO7-iAkL6yw&libraries=&v=weekly"
+      h2 "Карта споживача", style: "text-align: center; margin-top: 15px;"
+      div class: "map", id: "current_consumer_map", style: "width: max; height: 1000px;"
+      row :longitude do
+        span id: "consumer_longitude" do
+          consumer.longitude
+        end
+      end
+      row :latitude do
+        span id: "consumer_latitude" do
+          consumer.latitude
+        end
+      end
       row :tariff_id
       row :balance
       row :tariff_expiration_at

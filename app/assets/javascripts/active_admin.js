@@ -42,6 +42,34 @@ window.onload = function () {
             marker.setMap(consumerMap);
         });
     }
+
+    if (document.getElementById("current_consumer_map")) {
+        let currentConsumerMap = new google.maps.Map(document.getElementById("current_consumer_map"), {
+            zoom: 14,
+            center: {
+                lat: 48.6208,
+                lng: 22.2879
+            },
+        });
+
+        let marker = null;
+
+        let latitude = document.getElementById("consumer_latitude").innerText;
+        let longitude = document.getElementById("consumer_longitude").innerText;
+        console.log(latitude, longitude)
+        marker = new google.maps.Marker({
+            position: {
+                lat: parseFloat(latitude),
+                lng: parseFloat(longitude)
+            }
+        });
+
+        // focus map on marker
+        currentConsumerMap.setCenter(marker.getPosition());
+
+        marker.setMap(currentConsumerMap);
+    }
+
     // if current url has / in the end, clear it
     if (current_url[current_url.length - 1] === "/") {
         window.location.href = current_url.substring(0, window.location.href.toString().length - 1);

@@ -7,7 +7,9 @@ ActiveAdmin.register ChangeTariffRequest do
     column :consumer
     column :tariff
     column :processed
-    column :state
+    column :state do |model|
+      t("state.#{model.state}")
+    end
     column :comment
     actions
   end
@@ -19,7 +21,7 @@ ActiveAdmin.register ChangeTariffRequest do
       f.input :consumer
       f.input :tariff
       f.input :processed
-      f.input :state, as: :select, collection: ChangeTariffRequest.states.keys
+      f.input :state, as: :select, collection: ChangeTariffRequest.states.keys.map { |u| ["#{t("state.#{u}")}", u] }
       f.input :comment
     end
     f.actions
