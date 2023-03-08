@@ -14,4 +14,38 @@ ActiveAdmin.register Solved do
 
   form partial: "form"
 
+  controller do
+    def create
+      @solved = Solved.new(permitted_params[:solved])
+      @solved.complaint = Complaint.find(params[:complaint_id])
+      @solved.employee = current_employee
+      consumer = @solved.complaint.consumer
+      if @solved.save
+
+        # send email to consumer
+
+        # send email to consumer with comment from admin
+        email = {
+          html: render_to_string(:partial => 'admin/solveds/resolved', :locals => { consumer: consumer, solved: @solved }),
+          text: 'Text',
+          subject: 'Відповідь на скаргу на сайті провайдера ZizenCom',
+          from: {
+            name: 'ZizenCom',
+            email: 'zyzen.vasyl@student.uzhnu.edu.ua'
+          },
+          to: [
+            {
+              email: consumer.email
+            }
+          ]
+        }
+
+        @smtp_service.send_email(email)
+
+        redirect_to admin_complaint_path(@solved.complaint)
+      else
+        render :new
+      end
+    end
+  end
 end

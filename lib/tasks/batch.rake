@@ -25,7 +25,7 @@ namespace :batch do
       # recalculate tariff_expiration_at for current tariff
       consumer.update(tariff_expiration_at: (Date.current + (consumer.balance / (consumer.tariff.price / consumer.tariff.expiration_days.to_f)).to_f))
 
-      change_tariff_request.update(processed: true)
+      change_tariff_request.update(processed: true, state: :accepted)
     end
   end
 end

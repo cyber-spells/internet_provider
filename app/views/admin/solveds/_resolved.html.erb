@@ -1,0 +1,15 @@
+<div>
+  Вітаю, <%= consumer.full_name %>, ось відповідь на Вашу скаргу:
+</div>
+
+<div>
+  <%= solved.text %>
+</div>
+
+<div>
+  Дата: <%= solved.created_at %>
+</div>
+
+<div>
+  З повагою, <%= solved.employee.name %>
+</div>
