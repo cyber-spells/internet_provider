@@ -1,6 +1,6 @@
 <div class="layoutPage_chapter">
   <%= link_to get_complaint_path(@complaint.id), class: "layoutPage_link", remote: true, data: { bs_target: '#complaintModal' } do %>
-    <h4 class="">Скарга №<%= @complaint.id %><small class="ms-3">(статус <%= @complaint.state %>)</small></h4>
+    <h4 class="">Скарга №<%= @complaint.id %><small class="ms-3">(статус <%= t("state.#{@complaint.state}") %>)</small></h4>
   <% end %>
 </div>
 

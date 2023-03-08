@@ -1,4 +1,12 @@
 uk:
+  state:
+    open: "Відкрито"
+    close_consumer: "Закрито споживачем"
+    close_without_resolved: "Закрито без вирішення"
+    resolved: "Вирішено"
+    pending: "Очікує"
+    accepted: "Прийнято"
+    rejected: "Відхилено"
   formtastic:
     create: "Створити %{model}"
     update: "Оновити %{model}"
@@ -490,3 +498,4 @@ uk:
       last: "Остання"
       next: "Наступна"
       previous: "Попередня"
+  close: "Закрити"

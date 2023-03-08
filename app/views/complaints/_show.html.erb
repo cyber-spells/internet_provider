@@ -1,5 +1,5 @@
 <div class="">
-  <h3 class="mb-3">Скарга <span class="info">№<%= @complaint.id %> (статус <%= @complaint.state %>)</span></h3>
+  <h3 class="mb-3">Скарга <span class="info">№<%= @complaint.id %> (статус <%= t "state.#{@complaint.state}" %>)</span></h3>
     <p>номер абонента: <span class="info"><%= @complaint.consumer&.id %></span></p>
     <p>телефон: <span class="info"><%= @complaint.phone %></span></p>
     <p>адреса: <span class="info"><%= @complaint.address %></span></p>
@@ -10,6 +10,6 @@
       <%= render @solveds %>
     </div>
     <div class="d-flex justify-content-center ">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("close") %></button>
     </div>
 </div>
