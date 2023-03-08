@@ -1,13 +1,13 @@
 ActiveAdmin.register Complaint do
   permit_params :employee_id, :consumer_id, :text, :user_name, :phone, :address, :state
 
-  action_item :solve, only: :show  do
-    link_to "Solve", new_admin_complaint_solved_path(resource)
+  action_item :solve, only: :show do
+    link_to "Вирішити", new_admin_complaint_solved_path(resource)
   end
 
   scope :all
   Complaint.states.keys.each do |state|
-    scope state.pluralize.to_sym, group: :state
+    scope state.to_sym, group: :state
   end
 
   # permit_params do
@@ -19,7 +19,9 @@ ActiveAdmin.register Complaint do
   index do
     selectable_column
     id_column
-    column :state
+    column :state do |complaint|
+      t("state.#{complaint.state}")
+    end
     column :phone
     column :user_name
     column :consumer
@@ -37,14 +39,16 @@ ActiveAdmin.register Complaint do
       state: Complaint.states[:close_without_resolved],
     )
 
-    redirect_to resource, notice: "Closed!"
+    redirect_to resource, notice: "Закрито!"
   end
 
   show do |complaint|
     complaint.update(state: Complaint.states[:in_process], employee: current_employee) if complaint.open?
 
     attributes_table do
-      row :state
+      row :state do
+        t("state.#{complaint.state}")
+      end
       row :employee
       row :consumer
       row :user_name
@@ -54,7 +58,7 @@ ActiveAdmin.register Complaint do
     end
     panel "Рішення" do
       table_for complaint.solveds do
-        column { |solved| link_to solved.id, admin_complaint_solved_path(complaint,solved) }
+        column { |solved| link_to solved.id, admin_complaint_solved_path(complaint, solved) }
         column :employee
         column :text
         column :created_at

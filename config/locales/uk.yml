@@ -7,10 +7,21 @@ uk:
     pending: "Очікує"
     accepted: "Прийнято"
     rejected: "Відхилено"
+    in_process: "В процесі"
   formtastic:
     create: "Створити %{model}"
     update: "Оновити %{model}"
   active_admin:
+    scopes:
+      all: "Всі"
+      open: "Відкрито"
+      close_consumer: "Закрито споживачем"
+      close_without_resolved: "Закрито без вирішення"
+      resolved: "Вирішено"
+      pending: "Очікує"
+      accepted: "Прийнято"
+      rejected: "Відхилено"
+      in_process: "В процесі"
     dashboard: "Панель керування"
     dashboard_welcome:
       welcome: "Ласкаво просимо до Active Admin. Це стандартна сторінка керування сайтом."
@@ -175,6 +186,14 @@ uk:
         one: "Заявка на зміну тарифу"
         few: "Заявки на зміну тарифу"
         other: "Заявки на зміну тарифу"
+      payment:
+        one: "Платіж"
+        few: "Платежі"
+        other: "Платежі"
+      solved:
+        one: "Вирішено"
+        few: "Вирішені"
+        other: "Вирішені"
     attributes:
       employee:
         id: "ID"
@@ -234,6 +253,23 @@ uk:
         id: "ID"
         created_at: "Створено"
         updated_at: "Оновлено"
+      payment:
+        id: "ID"
+        title: "Назва"
+        consumer_id: "Споживач"
+        sum: "Сума"
+        tariff_id: "Тариф"
+        created_at: "Створено"
+        updated_at: "Оновлено"
+      solved:
+        id: "ID"
+        text: "Текст"
+        complaint: "Скарга"
+        employee: "Співробітник"
+        created_at: "Створено"
+        updated_at: "Оновлено"
+
+
     errors:
       format: "%{attribute} %{message}"
       messages:

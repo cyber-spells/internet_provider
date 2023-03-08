@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
     h2 "Таблиця скарг", style: "text-align: center;"
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
-        pie_chart Complaint.group(:state).count
+        pie_chart Complaint.all.group_by { |complaint| t("state.#{complaint.state}") }.map { |el| [el[0], el[1].count] }
       end
     end
     h2 "Таблиця запитів на зміну тарифу", style: "text-align: center; margin-top: 15px;"
