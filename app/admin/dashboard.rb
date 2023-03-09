@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
     h2 "Таблиця запитів на зміну тарифу", style: "text-align: center; margin-top: 15px;"
     div class: "blank_slate_container", id: "dashboard_default_message_1" do
       span class: "blank_slate" do
-        pie_chart ChangeTariffRequest.all.group_by { |change_tariff_request| change_tariff_request.tariff.name }.map { |el| [el[0], el[1].count] }
+        pie_chart ChangeTariffRequest.all.group_by { |change_tariff_request| t("state.#{change_tariff_request.state}") }.map { |el| [el[0], el[1].count] }
       end
     end
     h2 "Карта споживачів", style: "text-align: center; margin-top: 15px;"
