@@ -42,6 +42,10 @@ ActiveAdmin.register Solved do
 
         @smtp_service.send_email(email)
 
+        # Create new notification for consumer
+        ConsumerNotification.create(consumer: consumer, title: "Відповідь на скаргу",
+                                    body: "Ви отримали відповідь на скаргу з ID:#{@solved.id}. Перегляньте деталі на вкладці скарг.")
+
         redirect_to admin_complaint_path(@solved.complaint)
       else
         render :new

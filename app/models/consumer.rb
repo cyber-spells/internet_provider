@@ -31,4 +31,6 @@ class Consumer < ApplicationRecord
   has_many :complaints, dependent: :destroy
 
   has_many :payments, dependent: :destroy
+
+  has_many :consumer_notifications, dependent: :destroy
 end

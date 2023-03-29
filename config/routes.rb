@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'download_payment/:id', to: 'payments#download_payment', as: 'download_payment'
 
+  post 'consumers/:id/view_notifications', to: 'consumers#view_notifications', as: 'consumer_view_notifications'
+
   root to: 'consumers#show'
 
   devise_for :employees, ActiveAdmin::Devise.config

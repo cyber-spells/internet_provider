@@ -14,6 +14,9 @@ class ConsumersController < ApplicationController
 
     @payments = @consumer.payments
 
+    @consumer_notifications = @consumer.consumer_notifications.order(created_at: :desc)
+    @unviewed_notifications_count = @consumer_notifications.where(viewed?: false).count
+
     if @consumer.change_tariff_requests.any? && @consumer.change_tariff_requests.last.processed == false
       @change_tariff_request = @consumer.change_tariff_requests.last
     else
@@ -28,6 +31,20 @@ class ConsumersController < ApplicationController
     respond_to do |format|
       format.html { render :refill }
       format.js { render :refill }
+    end
+  end
+
+  def view_notifications
+    @consumer = current_consumer
+    @consumer_notifications = @consumer.consumer_notifications
+    @consumer_notifications.where(viewed?: false).each do |notification|
+      notification.update(viewed?: true)
+    end
+
+    @unviewed_notifications_count = @consumer_notifications.where(viewed?: false).count
+
+    respond_to do |format|
+      format.json { render json: { new_count: @unviewed_notifications_count } }
     end
   end
 

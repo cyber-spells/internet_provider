@@ -6,13 +6,29 @@ document.addEventListener('turbolinks:load', () => {
     previous_action = document.getElementById('consumer_info');
 })
 
-function change_consumer_action(action) {
+function change_consumer_action(action, consumer_id = null) {
     if (previous_action === document.getElementById(`consumer_liqpay_checkout`)) {
         document.getElementById(`consumer_liqpay_checkout`).innerHTML = "";
+    }
+    if (action === 'notification' && consumer_id !== null) {
+        onViewNotifications(consumer_id);
     }
     previous_action.hidden = true;
     previous_action = document.getElementById(`consumer_${action}`);
     previous_action.hidden = false;
+}
+
+function onViewNotifications(consumer_id) {
+    Rails.ajax({
+        type: "POST",
+        url: `consumers/${consumer_id}/view_notifications`,
+        success: function (response) {
+            document.querySelector("#consumer-notifications-count").innerHTML = response.new_count;
+        },
+        error: function () {
+            console.log("error")
+        }
+    })
 }
 
 function onPay(consumer_id, amount) {

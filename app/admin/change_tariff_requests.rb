@@ -86,6 +86,10 @@ ActiveAdmin.register ChangeTariffRequest do
             }
           end
           @smtp_service.send_email(email)
+
+          # Create new notification for consumer
+          ConsumerNotification.create(consumer: consumer, title: "Зміна тарифу",
+                                      body: "Ваша заявка на зміну тарифу успішно опрацьована.")
         end
         redirect_to admin_change_tariff_requests_path, notice: 'Change tariff_request was updated'
       end
