@@ -15,42 +15,52 @@ window.onload = function () {
             zoom: 14,
             center: {
                 lat: 48.6208,
-                lng: 22.2879
+                lng: 22.2879,
             },
         });
+
+        let latitude = parseFloat(document.getElementById("consumer_latitude").value);
+        let longitude = parseFloat(document.getElementById("consumer_longitude").value);
         let marker = null;
-        // handle click on map
+
+        if (!isNaN(latitude) && !isNaN(longitude)) {
+            marker = new google.maps.Marker({
+                position: {
+                    lat: latitude,
+                    lng: longitude,
+                },
+                map: consumerMap,
+            });
+        }
+
         google.maps.event.addListener(consumerMap, "click", (event) => {
-            // get latitude and longitude
             let latitude = event.latLng.lat();
             let longitude = event.latLng.lng();
 
-            // set latitude and longitude to input fields and create marker
             document.getElementById("consumer_latitude").value = latitude;
             document.getElementById("consumer_longitude").value = longitude;
 
-            // Perform a reverse geocoding lookup
             let geocoder = new google.maps.Geocoder();
-            geocoder.geocode({'location': event.latLng}, function (results, status) {
-                if (status === 'OK') {
-                    // Get the formatted address from the first result
+            geocoder.geocode({ location: event.latLng }, function (results, status) {
+                if (status === "OK") {
                     document.querySelector("#consumer_address").value = results[0].formatted_address;
                 } else {
-                    console.log('Geocoder failed due to: ' + status);
+                    console.log("Geocoder failed due to: " + status);
                 }
             });
 
             if (marker != null) {
                 let latLng = new google.maps.LatLng(latitude, longitude);
                 marker.setPosition(latLng);
-            } else marker = new google.maps.Marker({
-                position: {
-                    lat: latitude,
-                    lng: longitude
-                }
-            });
-
-            marker.setMap(consumerMap);
+            } else {
+                marker = new google.maps.Marker({
+                    position: {
+                        lat: latitude,
+                        lng: longitude,
+                    },
+                    map: consumerMap,
+                });
+            }
         });
     }
 

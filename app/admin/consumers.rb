@@ -41,11 +41,11 @@ ActiveAdmin.register Consumer do
       f.input :address
       f.input :longitude, as: :string
       f.input :latitude, as: :string
-      h2 "Карта споживачів", style: "text-align: center; margin-top: 15px;"
-      div class: "map", id: "consumer_map", style: "width: max; height: 1000px;"
       f.input :tariff_id, as: :select, collection: Tariff.all.map { |u| ["#{u.name}", u.id] }
       f.input :balance
       f.input :tariff_expiration_at
+      h2 "Карта споживачів", style: "text-align: center; margin-top: 15px;"
+      div class: "map", id: "consumer_map", style: "width: max; height: 1000px;"
     end
     f.actions
   end
