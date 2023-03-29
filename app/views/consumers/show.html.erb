@@ -24,6 +24,9 @@
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">
             Мій тариф
           </button>
+          <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('notification');">
+            Центр сповіщень <span class="notification_how">1</span>
+          </button>
           <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('payment');">
             Поповнити баланс
           </button>
@@ -188,6 +191,26 @@
 
         </div>
 
+        <div id="consumer_notification" hidden>
+          <h1 class="mb_parrent">
+            Центр сповіщень
+          </h1>
+
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-9">
+              <div class="notification mb_child unviewed">
+                <h4 class="layoutPage_text mb_child">Ви отримали відповідь на скаруг №1</h4>
+                <p class="layoutPage_link mb-0" onclick="">Переглянути</p>
+              </div>
+              <div class="notification mb_child viewed">
+                <h4 class="layoutPage_text mb_child">Ваш тариф оновлено</h4>
+                <p class="layoutPage_link" onclick="">Переглянути</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <div id="consumer_change_tariff" hidden>
           <h1 class="mb_parrent">
             Зміна тарифу
@@ -312,6 +335,9 @@
       <div class="layout_line layout_line__full mb_child"></div>
       <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('tariff');">
         Мій тариф
+      </button>
+      <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('notification');">
+        Центр сповіщень <span class="notification_how">1</span>
       </button>
       <button class="btn btn__icon btn__icon_hover d-block w-100 text-start" type="button" onclick="change_consumer_action('payment');">
         Поповнити баланс

@@ -611,3 +611,20 @@ label{
         border: none;
     }
 }
+
+.notification{
+    padding: 10px;
+    background-color: rgba(0,0,0,.05);
+    &.unviewed{
+        background-color: rgba(#1cd99d,.25);
+    }
+    &_how{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(#1cd99d,.8);
+        width: 25px;
+        height: 25px;
+        border-radius: 999px;
+    }
+}
