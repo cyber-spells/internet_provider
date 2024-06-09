@@ -43,4 +43,4 @@
 db/schema.rb
 /storage/.keep
 
-/public/packs
+#/public/packs
