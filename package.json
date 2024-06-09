@@ -2,7 +2,6 @@
   "name": "internet-provider",
   "private": true,
   "dependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^6.1.7",
     "@rails/activestorage": "^6.1.7",
@@ -21,10 +20,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/eslint-parser": "^7.24.7",
-    "@babel/plugin-transform-private-methods": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
     "webpack-dev-server": "^3"
   }
 }
