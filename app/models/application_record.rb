@@ -6,6 +6,6 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def self.ransackable_associations(auth_object = nil)
-    reflect_on_all_associations.map { |a| a.name.to_s } + _ransackers.keys
+    reflect_on_all_associations.map { | a | a.name.to_s } + _ransackers.keys
   end
 end

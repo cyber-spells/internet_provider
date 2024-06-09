@@ -1,7 +1,7 @@
-//= require arctic_admin/base
 //= require chartkick
 //= require Chart.bundle
 //= require "@rails/ujs"
+//= require arctic_admin/base
 
 // add event listener onclick for button with id btn_id
 
@@ -41,7 +41,7 @@ window.onload = function () {
             document.getElementById("consumer_longitude").value = longitude;
 
             let geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ location: event.latLng }, function (results, status) {
+            geocoder.geocode({location: event.latLng}, function (results, status) {
                 if (status === "OK") {
                     document.querySelector("#consumer_address").value = results[0].formatted_address;
                 } else {
