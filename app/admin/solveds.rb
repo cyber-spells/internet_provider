@@ -28,9 +28,9 @@ ActiveAdmin.register Solved do
         email = {
           html: render_to_string(:partial => 'admin/solveds/resolved', :locals => { consumer: consumer, solved: @solved }),
           text: 'Text',
-          subject: 'Відповідь на скаргу на сайті провайдера ZizenCom',
+          subject: 'Відповідь на скаргу на сайті провайдера SunCom',
           from: {
-            name: 'ZizenCom',
+            name: 'SunCom',
             email: 'zyzen.vasyl@student.uzhnu.edu.ua'
           },
           to: [

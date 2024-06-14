@@ -14,16 +14,16 @@ if defined?(ActionMailer)
 
       @token = token
 
-      default_url_options[:host] = Rails.env.development? ? 'localhost:3000' : 'http://46.101.202.118'
+      default_url_options[:host] = Rails.env.development? ? 'localhost:3000' : 'https://internet-provider-daa86d576eaf.herokuapp.com'
 
       @resource = record
       # send email to consumer
       email = {
         html: render_to_string(:partial => 'consumers/mailer/reset_password_instructions'),
         text: 'Text',
-        subject: 'Відновлення паролю на сайті провайдера ZizenCom',
+        subject: 'Відновлення паролю на сайті провайдера SunCom',
         from: {
-          name: 'ZizenCom',
+          name: 'SunCom',
           email: 'zyzen.vasyl@student.uzhnu.edu.ua'
         },
         to: [

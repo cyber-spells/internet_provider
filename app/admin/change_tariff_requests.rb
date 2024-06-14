@@ -56,9 +56,9 @@ ActiveAdmin.register ChangeTariffRequest do
             email = {
               html: render_to_string(:partial => 'admin/change_tariff_requests/accepted', :locals => { consumer: consumer, change_tariff_request: @change_tariff_request }),
               text: 'Text',
-              subject: 'Ваша заявка на зміну тарифу успішно опрацьована на сайті ZizenCom',
+              subject: 'Ваша заявка на зміну тарифу успішно опрацьована на сайті SunCom',
               from: {
-                name: 'ZizenCom',
+                name: 'SunCom',
                 email: 'zyzen.vasyl@student.uzhnu.edu.ua'
               },
               to: [
@@ -73,9 +73,9 @@ ActiveAdmin.register ChangeTariffRequest do
             email = {
               html: render_to_string(:partial => 'admin/change_tariff_requests/rejected', :locals => { consumer: consumer, change_tariff_request: @change_tariff_request }),
               text: 'Text',
-              subject: 'Ваша заявка на зміну тарифу успішно опрацьована на сайті провайдера ZizenCom',
+              subject: 'Ваша заявка на зміну тарифу успішно опрацьована на сайті провайдера SunCom',
               from: {
-                name: 'ZizenCom',
+                name: 'SunCom',
                 email: 'zyzen.vasyl@student.uzhnu.edu.ua'
               },
               to: [
