@@ -22,9 +22,7 @@ gem 'webpacker', '~> 5.0'
 
 gem "devise"
 
-gem 'wicked_pdf'
-
-gem 'wkhtmltopdf-binary'
+gem 'prawn'
 
 gem "simple_form"
 
